@@ -1,0 +1,1617 @@
+@charset "utf-8";
+/*********** 共用樣式 ***********/
+body {
+    display: flex;
+    height: 100vh;
+    margin: 0;
+    color: #222;
+    background: #fafafa;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    overflow-x: hidden;
+}
+a {
+    color: #00acac;
+}
+a:hover,
+a:active,
+a:focus,
+a:focus-within {
+    color: #ff9800;
+}
+/*********** 共用容器 ***********/
+.share_container,
+.share_container_s,
+.share_container_m,
+.share_container_l {
+    width: 95%;
+    margin: 0 auto;
+}
+.share_container_s {
+    max-width: 500px;
+}
+.share_container_m {
+    max-width: 1000px;
+}
+.share_container_l {
+    max-width: 1400px;
+}
+/*********** 共用寬度% ***********/
+.w10,
+.w20,
+.w30,
+.w40,
+.w50,
+.w60,
+.w70,
+.w80,
+.w90 {
+    display: inline-block;
+    vertical-align: middle;
+}
+.w10 {
+    width: 8%;
+}
+.w20 {
+    width: 19%;
+}
+.w30 {
+    width: 28%;
+}
+.w40 {
+    width: 37%;
+}
+.w50 {
+    width: 48%;
+}
+.w60 {
+    width: 57%;
+}
+.w70 {
+    width: 68%;
+}
+.w80 {
+    width: 78%;
+}
+.w90 {
+    width: 88%;
+}
+.w100 {
+    width: 98%;
+}
+/*********** 共用flex ***********/
+.flex {
+    display: flex;
+    align-items: center;
+}
+.jc_bt {
+    justify-content: space-between;
+}
+.jc_ar {
+    justify-content: space-around;
+}
+.jc_evenly {
+    justify-content: space-evenly;
+}
+.jc_center {
+    justify-content: center;
+}
+.jc_flex-start {
+    justify-content: flex-start;
+}
+.jc_flex_end {
+    justify-content: flex-end;
+}
+.jc_end {
+    justify-content: end;
+    align-items: stretch;
+}
+.ai_start {
+    align-items: flex-start;
+}
+.ai_center {
+    align-items: center;
+}
+.ai_stretch {
+    align-items: stretch;
+}
+.flex_wrap {
+    flex-wrap: wrap;
+}
+.flex_nowrap {
+    flex-wrap: nowrap;
+}
+.flex_column {
+    flex-direction: column;
+}
+/*********** 共用-輸入框input ***********/
+input[type="text"],
+input[type="number"],
+input[type="button"],
+input[type="submit"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.input20,
+.input33,
+.input50,
+.input100,
+.select33,
+.select50,
+.select100,
+.textarea50,
+.textarea100,
+select.no_width {
+    display: flex;
+    flex-direction: row;
+    width: calc(100% - 12px);
+    padding: 5px;
+    color: #555;
+    font: normal normal 1rem/1rem "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    vertical-align: middle;
+}
+.input100 {
+    width: calc(100% - 15px);
+}
+.input50 {
+    width: calc(100% / 2 - 16px);
+}
+.input33 {
+    width: calc(100% / 3 - 15px);
+}
+.input_no_width,
+input.no_width {
+    display: inline-block;
+    padding: 5px;
+    color: #555;
+    font: normal normal 1rem/1rem "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    vertical-align: middle;
+}
+/*********** 共用-下拉選擇框select ***********/
+.select100 {
+    width: 100%;
+}
+.select50 {
+    width: calc(100% / 2 - 5px);
+}
+.select33 {
+    width: calc(100% / 3 - 5px);
+}
+select.no_width {
+    width: auto;
+    padding: 3px 20px 3px 5px;
+}
+/*********** 共用-多文字輸入框 ***********/
+.textarea {
+    width: 97%;
+    height: 5rem;
+    margin: 0 auto;
+    padding: .5rem;
+    color: #555;
+    font: normal normal 1rem/1rem "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    outline: none;
+    resize: none;
+}
+.textarea50,
+.textarea100 {
+    width: 97%;
+    min-height: 100px;
+    padding: 5px 10px;
+    margin: 0 0 10px 0;
+    font: normal normal 15px/21px "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+    resize: none;
+}
+.textarea50 {
+    width: calc(100% / 2 - 22px);
+}
+/*********** 共用-radio、checkbox ***********/
+input[type="radio"] {
+    width: 1.2rem;
+    height: 1.2rem;
+    margin: 0 2px 0 0;
+    border: 0;
+    vertical-align: middle;
+    cursor: pointer;
+}
+/*********** 共用-按鈕 ***********/
+button,
+input[type="button"],
+input[type="submit"] {
+    padding: 5px;
+    color: #fff;
+    text-align: center;
+    border: 0;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    transition: all ease-in 0.15s;
+    vertical-align: middle;
+    cursor: pointer;
+}
+input.btn20,
+button.btn20,
+a.btn20 {
+    width: 20%;
+}
+input.btn33,
+button.btn33,
+a.btn33 {
+    width: 31%;
+}
+input.btn50,
+button.btn50,
+a.btn50 {
+    width: 48%;
+}
+input.btn100,
+button.btn100,
+a.btn100 {
+    width: calc(100% - 10px);
+}
+input.btn_small,
+button.btn_small,
+a.btn_small {
+    padding: .1rem .5rem;
+    margin: 0 .2rem;
+    font: normal normal .9rem/1.1rem "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+}
+input.btn_big,
+button.btn_big,
+a.btn_big {
+    padding: .3rem 1rem;
+    margin: 0 5px 0 0;
+    font: normal bold 1rem/1rem "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+}
+input.btn_superbig,
+button.btn_superbig,
+a.btn_superbig {
+    padding: .6rem 1rem;
+    margin: 0 5px 0 0;
+    font: normal bold 1.2rem/1.2rem "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+}
+/*********** 共用-按鈕顏色 ***********/
+button:hover,
+button:active,
+button:focus,
+button.selected,
+input[type="button"]:hover,
+input[type="button"]:active,
+input[type="button"]:focus,
+input[type="button"].selected,
+input[type="submit"]:hover,
+input[type="submit"]:active,
+input[type="submit"]:focus,
+input[type="submit"].selected {
+    transition: opacity .3s ease;
+}
+input.btn_yellow,
+a.btn_yellow {
+    background: #e3b544;
+    border-bottom: 3px solid #e3b544;
+}
+input.btn_yellow:hover,
+input.btn_yellow:active,
+input.btn_yellow:focus,
+a.btn_yellow:hover,
+a.btn_yellow:active,
+a.btn_yellow:focus {
+    background: #ae8519;
+    border-bottom: 3px solid #77622c;
+}
+input.btn_yellow.selected,
+a.btn_yellow.selected {
+    background: #dda500;
+    border-bottom: 3px solid #ab7f00;
+}
+input.btn_blue,
+a.btn_blue {
+    background: #3485c5;
+    border-bottom: 3px solid #3485c5;
+}
+input.btn_blue:hover,
+input.btn_blue:active,
+input.btn_blue:focus,
+a.btn_blue:hover,
+a.btn_blue:active,
+a.btn_blue:focus {
+    background: #196aa9;
+    border-bottom: 3px solid #0f4b7b;
+}
+input.btn_blue.selected,
+a.btn_blue.selected {
+    background: #008fff;
+    border-bottom: 3px solid #008fff;
+}
+input.btn_green,
+a.btn_green {
+    background: #009a6d;
+    border-bottom: 3px solid #009a6d;
+}
+input.btn_green:hover,
+input.btn_green:active,
+input.btn_green:focus,
+a.btn_green:hover,
+a.btn_green:active,
+a.btn_green:focus {
+    background: #1d8375;
+    border-bottom: 3px solid #0e5b51;
+}
+input.btn_green.selected,
+a.btn_green.selected {
+    background: #1dba6c;
+    border-bottom: 3px solid #1dba6c;
+}
+input.btn_red,
+a.btn_red {
+    background: #df3f3f;
+    border-bottom: 3px solid #df3f3f;
+}
+input.btn_red:hover,
+input.btn_red:active,
+input.btn_red:focus,
+a.btn_red:hover,
+a.btn_red:active,
+a.btn_red:focus {
+    background: #b42121;
+    border-bottom: 3px solid #b42121;
+}
+input.btn_red.selected,
+a.btn_red.selected {
+    background: #ff5a33;
+    border-bottom: 3px solid #ff5a33;
+}
+input.btn_lightgray,
+a.btn_lightgray {
+    background: #bbb;
+    border-bottom: 3px solid #bbb;
+}
+input.btn_lightgray:hover,
+input.btn_lightgray:active,
+input.btn_lightgray:focus,
+a.btn_lightgray:hover,
+a.btn_lightgray:active,
+a.btn_lightgray:focus {
+    background: #999;
+    border-bottom: 3px solid #999;
+}
+input.btn_lightgray.selected,
+a.btn_lightgray.selected {
+    background: #aaa;
+    border-bottom: 3px solid #aaa;
+}
+input.btn_gray,
+a.btn_gray {
+    background: #9e9e9e;
+    border-bottom: 3px solid #747474;
+}
+input.btn_gray:hover,
+input.btn_gray:active,
+input.btn_gray:focus,
+a.btn_gray:hover,
+a.btn_gray:active,
+a.btn_gray:focus {
+    background: #888;
+    border-bottom: 3px solid #666;
+}
+input.btn_gray.selected,
+a.btn_gray.selected {
+    background: #888;
+    border-bottom: 3px solid #666;
+}
+/*********** 共用-文字顏色 ***********/
+.text_white {
+    color: #fff;
+}
+.text_yellow {
+    color: #e2c500;
+}
+.text_orange {
+    color: #ff4e00;
+}
+.text_red {
+    color: #f22;
+}
+.text_lightred {
+    color: #f87d7d;
+}
+.text_deepred {
+    color: #b00;
+}
+.text_blue {
+    color: #0091ff;
+}
+.text_deepblue {
+    color: #0078bb;
+}
+.text_green {
+    color: #31a543;
+}
+.text_deepgreen {
+    color: #168047;
+}
+.text_pink {
+    color: #ff0080;
+}
+.text_purple {
+    color: #b789eb;
+}
+.text_gray {
+    color: #999;
+}
+.text_ightgray {
+    color: #ccc;
+}
+.text_deepgray {
+    color: #555;
+}
+.text_black {
+    color: #000;
+}
+/*********** 共用-背景色 ***********/
+.bg_white {
+    background-color: #fff;
+}
+.bg_yellow {
+    background-color: #fbf7e0;
+}
+.bg_lightyellow {
+    background-color: #fcfbe7;
+}
+.bg_deepyellow {
+    background: #4a4227;
+}
+.bg_red {
+    background: #a66f6f;
+}
+.bg_deepred {
+    background: #6a1f22;
+}
+.bg_pink {
+    background-color: #ffe5ef;
+}
+.bg_blue {
+    background-color: #e5f2f7;
+}
+.bg_lightblue {
+    background-color: #c4e1f3;
+}
+.bg_green {
+    background-color: #e1f4e6;
+}
+.bg_lightgreen {
+    background-color: #8fdbd4;
+}
+.bg_brown {
+    background-color: #ae7d52;
+}
+.bg_lightbrown {
+    background-color: #f1e6d8;
+}
+.bg_purple {
+    background: #7529fd;
+}
+.bg_gray {
+    background-color: #888;
+}
+.bg_lightgray {
+    background-color: #eee;
+}
+.bg_deepgray {
+    background-color: #444;
+}
+.bg_black {
+    background-color: #000;
+}
+/* 漸層色 */
+.bg_gradientyellow {
+    background: #fffde1;
+    background: -moz-linear-gradient(-45deg, #fffde1 15%, #fff 16%, #fdf7e6 46%, #f8eebe 84%, #fdf7e6 85%);
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(15%, #fffde1), color-stop(16%, #fff), color-stop(46%, #fdf7e6), color-stop(84%, #f8eebe), color-stop(85%, #fdf7e6));
+    background: -webkit-linear-gradient(-45deg, #fffde1 15%, #fff 16%, #fdf7e6 46%, #f8eebe 84%, #fdf7e6 85%);
+    background: -o-linear-gradient(-45deg, #fffde1 15%, #fff 16%, #fdf7e6 46%, #f8eebe 84%, #fdf7e6 85%);
+    background: -ms-linear-gradient(-45deg, #fffde1 15%, #fff 16%, #fdf7e6 46%, #f8eebe 84%, #fdf7e6 85%);
+    background: linear-gradient(135deg, #fffde1 15%, #fff 16%, #fdf7e6 46%, #f8eebe 84%, #fdfbe6 85%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffde1', endColorstr='#fdf7e6', GradientType=1);
+}
+.bg_gradientpink {
+    background: #ffecec;
+    background: -moz-linear-gradient(-45deg, #ffecec 15%, #fff 16%, #fde6e6 46%, #ffcbcb 84%, #fde6e6 85%);
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(15%, #ffecec), color-stop(16%, #fff), color-stop(46%, #fde6e6), color-stop(84%, #ffcbcb), color-stop(85%, #fde6e6));
+    background: -webkit-linear-gradient(-45deg, #ffecec 15%, #fff 16%, #fde6e6 46%, #ffcbcb 84%, #fde6e6 85%);
+    background: -o-linear-gradient(-45deg, #ffecec 15%, #fff 16%, #fde6e6 46%, #ffcbcb 84%, #fde6e6 85%);
+    background: -ms-linear-gradient(-45deg, #ffecec 15%, #fff 16%, #fde6e6 46%, #ffcbcb 84%, #fde6e6 85%);
+    background: linear-gradient(135deg, #ffecec 15%, #fff 16%, #fde6e6 46%, #ffcbcb 84%, #fde6e6 85%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffecec', endColorstr='#fde6e6', GradientType=1);
+}
+.bg_gradientblue {
+    background: #e1ffff;
+    background: -moz-linear-gradient(-45deg, #e1ffff 15%, #fff 16%, #e6f8fd 46%, #bee4f8 84%, #e6f8fd 85%);
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(15%, #e1ffff), color-stop(16%, #fff), color-stop(46%, #e6f8fd), color-stop(84%, #bee4f8), color-stop(85%, #e6f8fd));
+    background: -webkit-linear-gradient(-45deg, #e1ffff 15%, #fff 16%, #e6f8fd 46%, #bee4f8 84%, #e6f8fd 85%);
+    background: -o-linear-gradient(-45deg, #e1ffff 15%, #fff 16%, #e6f8fd 46%, #bee4f8 84%, #e6f8fd 85%);
+    background: -ms-linear-gradient(-45deg, #e1ffff 15%, #fff 16%, #e6f8fd 46%, #bee4f8 84%, #e6f8fd 85%);
+    background: linear-gradient(135deg, #e1ffff 15%, #fff 16%, #e6f8fd 46%, #bee4f8 84%, #e6f8fd 85%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e1ffff', endColorstr='#e6f8fd', GradientType=1);
+}
+.bg_gradientgreen {
+    background: #ebf9ed;
+    background: -moz-linear-gradient(-45deg, #ebf9ed 15%, #fff 16%, #eaf7ec 46%, #c7ecce 84%, #e5f5e5 85%);
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(15%, #ebf9ed), color-stop(16%, #fff), color-stop(46%, #eaf7ec), color-stop(84%, #c7ecce), color-stop(85%, #e5f5e5));
+    background: -webkit-linear-gradient(-45deg, #ebf9ed 15%, #fff 16%, #eaf7ec 46%, #c7ecce 84%, #e5f5e5 85%);
+    background: -o-linear-gradient(-45deg, #ebf9ed 15%, #fff 16%, #eaf7ec 46%, #c7ecce 84%, #e5f5e5 85%);
+    background: -ms-linear-gradient(-45deg, #ebf9ed 15%, #fff 16%, #eaf7ec 46%, #c7ecce 84%, #e5f5e5 85%);
+    background: linear-gradient(135deg, #ebf9ed 15%, #fff 16%, #eaf7ec 46%, #c7ecce 84%, #e5f5e5 85%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ebf9ed', endColorstr='#c7ecce', GradientType=1);
+}
+.bg_gradientgray {
+    background: #efefef;
+    background: -moz-linear-gradient(-45deg, #efefef 15%, #fff 16%, #f7f7f7 50%, #dfdfdf 84%, #f7f7f7 85%);
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(15%, #efefef), color-stop(16%, #fff), color-stop(50%, #f7f7f7), color-stop(84%, #dfdfdf), color-stop(85%, #f7f7f7));
+    background: -webkit-linear-gradient(-45deg, #efefef 15%, #fff 16%, #f7f7f7 50%, #dfdfdf 84%, #f7f7f7 85%);
+    background: -o-linear-gradient(-45deg, #efefef 15%, #fff 16%, #f7f7f7 50%, #dfdfdf 84%, #f7f7f7 85%);
+    background: -ms-linear-gradient(-45deg, #efefef 15%, #fff 16%, #f7f7f7 50%, #dfdfdf 84%, #f7f7f7 85%);
+    background: linear-gradient(135deg, #efefef 15%, #fff 16%, #f7f7f7 50%, #dfdfdf 84%, #f7f7f7 85%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#efefef', endColorstr='#f7f7f7', GradientType=1);
+}
+/* 實線外框 */
+.border_pink {
+    border: 3px solid #ffe2ec;
+}
+.border_yellow {
+    border: 3px solid #fbf7e0;
+}
+.border_blue {
+    border: 3px solid #bfe9de;
+}
+.border_green {
+    border: 3px solid #e9f6f2;
+}
+.border_lightgray {
+    border: 3px solid #ddd;
+}
+.border_gray {
+    border: 3px solid #aaa;
+}
+/* 虛線外框 */
+.border_dashed_pink {
+    border: 5px dashed #ffe2ec;
+}
+.border_dashed_yellow {
+    border: 5px dashed #fbf7e0;
+}
+.border_dashed_blue {
+    border: 5px dashed #bfe9de;
+}
+.border_dashed_green {
+    border: 5px dashed #e9f6f2;
+}
+.border_dashed_lightgray {
+    border: 5px dashed #ddd;
+}
+.border_dashed_gray {
+    border: 5px dashed #aaa;
+}
+/*********** 共用元件(圓角) ***********/
+.br5 {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+.br10 {
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+.br15 {
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+}
+.br20 {
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+}
+.br25 {
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+}
+.br30 {
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+}
+.br40 {
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    border-radius: 40px;
+}
+.br50 {
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+}
+/*********** 共用元件(上下左右間距) ***********/
+.m5 {
+    margin: 5px;
+}
+.mt5 {
+    margin-top: 5px;
+}
+.mb5 {
+    margin-bottom: 5px;
+}
+.mr5 {
+    margin-right: 5px;
+}
+.ml5 {
+    margin-left: 5px;
+}
+.m10 {
+    margin: 10px;
+}
+.mt10 {
+    margin-top: 10px;
+}
+.mb10 {
+    margin-bottom: 10px;
+}
+.mr10 {
+    margin-right: 10px;
+}
+.ml10 {
+    margin-left: 10px;
+}
+.m20 {
+    margin: 20px;
+}
+.mt20 {
+    margin-top: 20px;
+}
+.mb20 {
+    margin-bottom: 20px;
+}
+.mr20 {
+    margin-right: 20px;
+}
+.ml20 {
+    margin-left: 20px;
+}
+.m30 {
+    margin: 30px;
+}
+.mt30 {
+    margin-top: 30px;
+}
+.mb30 {
+    margin-bottom: 30px;
+}
+.mr30 {
+    margin-right: 30px;
+}
+.ml30 {
+    margin-left: 30px;
+}
+.p5 {
+    padding: 5px;
+}
+.pt5 {
+    padding-top: 5px;
+}
+.pb5 {
+    padding-bottom: 5px;
+}
+.pr5 {
+    padding-right: 5px;
+}
+.pl5 {
+    padding-left: 5px;
+}
+.p10 {
+    padding: 10px;
+}
+.pt10 {
+    padding-top: 10px;
+}
+.pb10 {
+    padding-bottom: 10px;
+}
+.pr10 {
+    padding-right: 10px;
+}
+.pl10 {
+    padding-left: 10px;
+}
+.p20 {
+    padding: 20px;
+}
+.pt20 {
+    padding-top: 20px;
+}
+.pb20 {
+    padding-bottom: 20px;
+}
+.pr20 {
+    padding-right: 20px;
+}
+.pl20 {
+    padding-left: 20px;
+}
+.p30 {
+    padding: 30px;
+}
+.pt30 {
+    padding-top: 30px;
+}
+.pb30 {
+    padding-bottom: 30px;
+}
+.pr30 {
+    padding-right: 30px;
+}
+.pl30 {
+    padding-left: 30px;
+}
+/*********** 共用元件(文字) ***********/
+.text_bold {
+    font-weight: bold !important;
+}
+.text_normal {
+    font-weight: normal !important;
+}
+.text_italic {
+    font-style: italic !important;
+}
+.text_right {
+    text-align: right;
+}
+.text_left {
+    text-align: left;
+}
+.text_center {
+    text-align: center;
+}
+.float_r {
+    float: right;
+}
+.float_l {
+    float: left;
+}
+.no_float {
+    float: none;
+}
+h1, h2, h3, h4, h5, h6, p,
+.h1, .h2, .h3, .h4, .h5, .p {
+    margin: .5rem 0;
+}
+h1,
+.h1 {
+    font: normal bold 2rem/2.2rem "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+}
+h2,
+.h2 {
+    font: normal bold 1.8rem/2rem "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+}
+h3,
+.h3 {
+    font: normal bold 1.6rem/1.8rem "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+}
+h4,
+.h4 {
+    font: normal bold 1.4rem/1.6rem "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+}
+h5,
+.h5 {
+    font: normal bold 1.2rem/1.4rem "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+}
+h6,
+.h6 {
+    font: normal bold 1rem/1.2rem "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+}
+p,
+.p {
+    font: normal normal 1.1rem/1.4rem "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+}
+br {
+    line-height: 1;
+}
+hr {
+    width: 100%;
+    margin: 1.3em 0;
+    border: 1px dashed #ccc;
+}
+/*********** 共用元件(單行、多行省略) ***********/
+/* 單行省略 */
+.text_overflow {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+/* 多行省略 */
+.text_overflow_more,
+.text_overflow_2,
+.text_overflow_3,
+.text_overflow_4 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+/* 多行省略(2行、3行、4行) */
+.text_overflow_2,
+.text_overflow_3,
+.text_overflow_4 {
+    height: 40px;
+}
+.text_overflow_3 {
+    height: 60px;
+    -webkit-line-clamp: 3;
+}
+.text_overflow_4 {
+    height: 80px;
+    -webkit-line-clamp: 4;
+}
+/*********** 共用元件(眼睛) ***********/
+.position_r {
+    position: relative;
+}
+.position_a {
+    position: absolute;
+}
+.share_eyes {
+    position: absolute;
+    top: 5px;
+    right: 20px;
+}
+i.fa-eye,
+i.fa-eye-slash {
+    font-size: 1rem;
+    cursor: pointer;
+}
+/*********** 共用元件(ul或 ol 列表) ***********/
+/* 共用-備註、提示 */
+.share_tipbox {
+    width: calc(100% - 2rem);
+    margin: 1rem auto;
+    padding: 1rem;
+    background-color: #e7e7e7;
+}
+/* ul或ol 前面是沒有任何樣式用 list_nostyle */
+.list_nostyle,
+.list_dot,
+.list_number,
+.list_roman,
+.list_chinese {
+    margin-left: 10px;
+    padding-left: 15px;
+    text-align: left;
+    word-wrap: break-word;
+    font: normal normal .95rem/1.2rem "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+}
+.list_nostyle.mt10,
+.list_dot.mt10,
+.list_number.mt10,
+.list_roman.mt10,
+.list_chinese.mt10 {
+    margin-top: 10px;
+}
+.list_nostyle {
+    padding: 0;
+    margin: 0;
+}
+.list_nostyle li {
+    margin: 0 0 10px 0;
+}
+.popup_sharebox .share_tipbox .list_nostyle li:last-of-type {
+    margin: 0;
+}
+.list_nostyle div,
+.list_nostyle span,
+.list_nostyle a,
+.list_dot li div,
+.list_dot li span,
+.list_dot li a,
+.list_number div,
+.list_number span,
+.list_number a,
+.list_roman div,
+.list_roman span,
+.list_roman a,
+.list_chinese div,
+.list_chinese span,
+.list_chinese a {
+    vertical-align: middle;
+}
+/* ul或ol 前面是 黑點，用 list_dot */
+.list_dot {
+    list-style: disc;
+}
+/* ul或ol 前面是 數字，用 list_number */
+.list_number {
+    list-style: decimal;
+}
+/* ul或ol 前面是 大寫羅馬數字，用 list_roman */
+.list_roman {
+    list-style: upper-roman;
+}
+/* ul或ol 前面是 中文數字，用 list_roman */
+.list_chinese {
+    /* list-style: trad-chinese-informal; */
+    list-style: decimal-leading-zero;
+}
+.list_dot li,
+.list_number li,
+.list_roman li,
+.list_chinese li {
+    margin-bottom: 10px;
+    padding-right: 5px;
+}
+.list_dot li:last-of-type,
+.list_number li:last-of-type,
+.list_roman li:last-of-type,
+.list_chinese :last-of-type {
+    margin-bottom: 0;
+}
+.list_chinese li.share_title {
+    margin: 0 0 10px 20px;
+    padding: 0;
+}
+.list_roman li {
+    margin: 0 0 10px 12px;
+}
+.list_number a,
+.list_roman a,
+.list_chinese a {
+    text-decoration: underline;
+}
+/*********** 共用寬度設定 ***********/
+.col_position {
+    position: relative;
+}
+.col_1 {
+    width: 99%;
+    margin: 0 0 5px 0;
+}
+.col_2,
+.col_3,
+.col_4,
+.col_5,
+.col_6,
+.col_7,
+.col_8,
+.col_9,
+.col_10 {
+    display: inline-block;
+    margin: 0 1% 7px 0;
+    vertical-align: top;
+}
+.col_2 {
+    width: calc(100% / 2 - 1.7%);
+}
+.col_3 {
+    width: calc(100% / 3 - 1.6%);
+}
+.col_4 {
+    width: calc(100% / 4 - 1.7%);
+}
+.col_5 {
+    width: calc(100% / 5 - 1.45%);
+}
+.col_6 {
+    width: calc(100% / 6 - 1.43%);
+}
+.col_7 {
+    width: calc(100% / 7 - 1.4%);
+}
+.col_8 {
+    width: calc(100% / 8 - 1.35%);
+}
+.col_9 {
+    width: calc(100% / 9 - 1.33%);
+}
+.col_10 {
+    width: calc(100% / 10 - 1.3%);
+}
+/*********** 共用欄位 ***********/
+.col_flex {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: calc(100% - 10px);
+    padding: 5px;
+    font: normal normal 1rem/1rem "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+}
+.item_title {
+    margin: 1rem;
+    font: normal bold 1rem/1rem "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+}
+.col_inline {
+    display: inline-block;
+    margin-right: 10px;
+    font: normal normal 1rem/1rem "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+}
+.col_radio,
+.col_checkbox {
+    display: inline-block;
+    margin-right: 10px;
+    font: normal normal 1rem/1rem "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+}
+.col_radio label,
+.col_checkbox label {
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.item_title i:last-of-type,
+.col_radio:last-of-type,
+.col_checkbox:last-of-type,
+.btn_box input:last-of-type {
+    margin-right: 0;
+}
+.col_title,
+.col_item {
+    display: inline-block;
+    word-break: break-word;
+    font: normal normal 1rem/1rem "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+    vertical-align: middle;
+}
+.col_title {
+    width: 24%;
+    padding: 0 1%;
+}
+.col_item {
+    width: calc(100% - 26%);
+}
+.col_date,
+.col_date50,
+.item_select {
+    display: flex;
+    flex-direction: row;
+    width: calc(100% - 12px);
+    padding: 5px;
+    color: #555;
+    font: normal normal 1rem/1rem "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    vertical-align: middle;
+}
+/*********** 共用_麵包屑 ***********/
+.breadcrumb_box {
+    padding: 5px 10px;
+    margin: 0 auto 10px;
+    color: #444;
+    font: normal normal 15px/15px "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+    background: #f5f5f5;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+.breadcrumb li,
+.breadcrumb span {
+    display: inline-block;
+    vertical-align: middle;
+}
+.breadcrumb li {
+    position: relative;
+    padding-right: 10px;
+}
+.breadcrumb li a {
+    line-height: 26px;
+}
+.breadcrumb li a:after {
+    content: "";
+    position: absolute;
+    right: 2px;
+    top: 50%;
+    width: 6px;
+    height: 6px;
+    margin-top: -2px;
+    border-top: 1px solid #888;
+    border-right: 1px solid #888;
+    transform: rotate(45deg);
+}
+/*********** 共用-假頁籤(版型1-用在會員頁) ***********/
+.share_tabbox {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    width: 18%;
+    margin: 10px;
+    border: 1px solid #ececec;
+}
+.share_tab,
+.flex_tabbox .share_tab {
+    position: relative;
+    width: calc(100% - 20px);
+    padding: 10px;
+    font: normal bold 1rem/1rem "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+    border-bottom: 1px solid #ececec;
+    cursor: pointer;
+}
+.share_tab:last-of-type {
+    border-bottom: 0;
+}
+.share_tab i {
+    margin: 0 5px 0 0;
+    text-align: center;
+}
+.share_tab:hover {
+    background: #d8f2f5;
+}
+.share_tab.selected,
+.share_tab:active,
+.share_tab:focus {
+    color: #fff;
+    background: #70c7d1;
+}
+.share_tab:focus-within {
+    color: #fff;
+    background: #60afb8;
+}
+/* 共用-假頁籤 */
+.flex_tabbox {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+    margin: 0;
+    border: 5px solid #ccc;
+}
+.flex_tabbox .share_tab {
+    display: flex;
+}
+.share_info {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 20px);
+    margin: 20px auto;
+    padding: 10px;
+    text-align: center;
+    border: 5px dotted #edeff4;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+/* 共用-假頁籤下方內容 */
+.boxinside_title {
+    position: relative;
+    padding: 5px 10px;
+    margin: 0 0 10px 0;
+    text-align: left;
+    font: normal bold 1.3rem/1.3rem "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+    border-bottom: 4px solid #ddd;
+}
+.boxinside_title::before {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 70px;
+    height: 4px;
+    background-color: #ffc500;
+}
+.share_inner {
+    padding: 20px;
+}
+.table_tab {
+    position: relative;
+    width: 10%;
+    min-width: 100px;
+    padding: 5px 10px;
+    margin: 0 5px 0 0;
+    text-align: center;
+    font: normal bold 1rem/1rem "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+    background: #e8e8e8;
+    border: 1px solid #ddd;
+    -webkit-border-radius: 5px 5px 0 0;
+    -moz-border-radius: 5px 5px 0 0;
+    -ms-border-radius: 5px 5px 0 0;
+    -o-border-radius: 5px 5px 0 0;
+    border-radius: 5px 5px 0 0;
+    cursor: pointer;
+}
+.table_tab:hover, .table_tab:active, .table_tab:focus {
+    background: #fff7d6;
+    border: 1px solid #ddd;
+}
+.chkbox_outside {
+    width: 100%;
+    margin: 0 auto 10px;
+    padding: 15px;
+    text-align: left;
+    background: #f3f3f3;
+}
+.pw_tips {
+    list-style: inside;
+    font: normal normal 14px/16px "Century Gothic", Arial, "Microsoft JhengHei", PMingLiU, sans-serif;
+}
+/*********** 共用-切換版色 ***********/
+.toggle-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    font: normal bold 18px/30px "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+    background: #fff;
+    border: 1px solid #ccc;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
+    color: #222;
+}
+.toggle-btn:hover {
+    background: #eee;
+}
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    margin-left: 5px;
+    color: #222;
+    text-align: center;
+    background-color: #d6ffff;
+    border: 1px solid #ccc;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+.theme-toggle:hover {
+    background-color: #eee;
+}
+.theme-toggle i {
+    font-size: 16px;
+    transition: transform 0.5s ease;
+}
+.theme-toggle.animate i {
+    transform: rotate(360deg);
+}
+/*********** 回到頂端按鈕 ***********/
+.go_top {
+    display: block;
+    position: fixed;
+    bottom: 75px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    /* 預設不能點，避免透明但可點 */
+    cursor: pointer;
+    opacity: 0;
+    z-index: 999;
+}
+.go_top img {
+    opacity: .5;
+}
+/*********** 深色模式 ***********/
+/* 共用樣式 */
+body.dark-theme {
+    color: #eee;
+    background: #222;
+}
+.body.dark-theme a {
+    color: #49bed7;
+}
+/* 共用元件(文字) */
+.body.dark-theme .boxset hr {
+    border: 1px dashed #777;
+}
+/* 共用-輸入框、下拉選擇框 */
+body.dark-theme .input20,
+body.dark-theme .input33,
+body.dark-theme .input50,
+body.dark-theme .input100,
+body.dark-theme .select33,
+body.dark-theme .select50,
+body.dark-theme .select100,
+body.dark-theme .textarea50,
+body.dark-theme .textarea100,
+body.dark-theme .input_no_width,
+body.dark-theme input.no_width,
+body.dark-theme select.no_width,
+body.dark-theme .col_date,
+body.dark-theme .col_date50,
+body.dark-theme .item_select {
+    color: #ccc;
+    background-color: #333;
+    border: 1px solid #555;
+}
+/* 切換版色 */
+body.dark-theme .theme-toggle {
+    color: #ddd;
+    background-color: #418a8a;
+    border-color: #777;
+}
+body.dark-theme .theme-toggle:hover {
+    background-color: #666;
+}
+body.dark-theme .toggle-btn {
+    color: #ddd;
+    background: #555;
+    border-color: #666;
+}
+body.dark-theme button.toggle-btn:hover,
+body.dark-theme button.toggle-btn:active {
+    color: #9bc4c4;
+    background: #3d6d74;
+    border-color: #428c8c;
+}
+/* 共用按鈕顏色 */
+body.dark-theme input.btn_yellow,
+body.dark-theme a.btn_yellow {
+    background: #ffa31f;
+    border: 1px solid #ffa31f;
+}
+/* 共用文字顏色 */
+body.dark-theme .text_red {
+    color: #ff6d6d;
+}
+/* 共用-麵包屑 */
+body.dark-theme .breadcrumb_box {
+    color: #fff;
+    background: #444;
+}
+/* 共用-假頁籤 */
+body.dark-theme .flex_tabbox {
+    border: 5px solid #949494;
+}
+body.dark-theme .share_info {
+    background: #444;
+    border: 5px dotted #949494;
+}
+/* 共用-假頁籤下方內容 */
+body.dark-theme .boxinside_title {
+    border-bottom: 4px solid #949494;
+}
+body.dark-theme .chkbox_outside {
+    background: #636363;
+}
+body.dark-theme .share_tipbox {
+    background-color: #454545;
+}
+
+/* 避免深淺色主題切換前閃白 */
+@media (prefers-color-scheme: dark) {
+    body:not(.light-theme) {
+        color: #eee;
+        background-color: #222;
+    }
+}
+
+/*********  以下為 各不同寬度螢幕_設定  *********/
+/* 寬度大於 1024px (iPad, iPad pro) */
+@media screen and (min-width: 1024px) {
+    /* 切換版色 */
+    .theme-toggle {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+    }
+    /* 共用-假頁籤(連到各html) */
+    .flex_tabbox .share_tab {
+        align-items: center;
+        flex-direction: column;
+        border-bottom: 0;
+    }
+    .share_tab i {
+        margin: 0 0 5px 0;
+        font-size: 1.7rem;
+    }
+}
+
+/* 寬度大於 1901px (電腦) */
+@media screen and (min-width: 1901px) {}
+
+/* 寬度介於 1441px - 1900px (ipad pro,舊電腦) */
+@media screen and (min-width: 1441px) and (max-width: 1900px) {}
+
+/* 寬度介於 1024px - 1300px (ipad) */
+@media screen and (min-width: 1024px) and (max-width: 1300px) {
+    /* 共用容器 */
+    .share_container,
+    .share_container_s,
+    .share_container_m,
+    .share_container_l {
+        width: 96%;
+    }
+}
+
+/* 寬度小於 1023px (電腦) */
+@media screen and (max-width: 1023px) {
+    /* 共用容器 */
+    .share_container,
+    .share_container_s,
+    .share_container_m {
+        width: 96%;
+    }
+    .share_container_l {
+        width: 84%;
+    }
+    /* 共用元件(按鈕) */
+    input.btn_small,
+    a.btn_small {
+        padding: 2px 5px;
+        margin: 0 5px;
+    }
+    input.btn_big,
+    a.btn_big {
+        padding: 5px;
+        font: normal normal 1rem/1.3rem "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+    }
+    input.btn_superbig,
+    a.btn_superbig {
+        padding: 10px;
+        margin: 0 5px;
+        font: normal normal 1.2rem/1.4rem "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+    }
+    /* 共用圓角 */
+    .br10 {
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+    }
+    .br20 {
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+    }
+    .br30 {
+        -webkit-border-radius: 15px;
+        -moz-border-radius: 15px;
+        border-radius: 15px;
+    }
+    .br40 {
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        border-radius: 20px;
+    }
+    .br50 {
+        -webkit-border-radius: 25px;
+        -moz-border-radius: 25px;
+        border-radius: 25px;
+    }
+}
+
+/* 寬度介於 901px - 1023px (電腦) */
+@media screen and (min-width: 901px) and (max-width: 1023px) {}
+
+/* 寬度小於 768px (手機) */
+@media (max-width: 768px) {
+    /* 回到頂端按鈕 */
+    .go_top {
+        bottom: 20px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+    }
+    /* 共用-麵包屑 */
+    .breadcrumb_box {
+        padding: 5px;
+        font: normal normal 14px/14px "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+    }
+    input.btn50, button.btn50, a.btn50 {
+        width: 90%;
+    }
+}
+
+/* 寬度介於 751px - 900px (iPad, 手機橫放) */
+@media screen and (min-width: 751px) and (max-width: 900px) {}
+
+/* 寬度介於 671px - 750px (iPad, 手機橫放) */
+@media screen and (min-width: 671px) and (max-width: 750px) {}
+
+/* 寬度介於 551px - 670px (手機橫放) */
+@media screen and (min-width: 551px) and (max-width: 670px) {
+    /* 共用容器 */
+    .share_container,
+    .share_container_s,
+    .share_container_m,
+    .share_container_l {
+        width: 98%;
+    }
+    .col_2 {
+        width: calc(100% - 2%);
+        padding: .2rem .2rem .5rem .2rem;
+    }
+}
+
+/* 寬度介於 401px - 550px (iPhone 6+) */
+@media screen and (min-width: 401px) and (max-width: 550px) {
+    /* 共用容器 */
+    .share_container {
+        width: 100%;
+    }
+    .share_container_l {
+        width: 96%;
+    }
+    .col_2 {
+        width: calc(100% - 2%);
+        padding: .2rem .2rem .5rem .2rem;
+    }
+}
+
+/* 寬度介於 401px - 414px (iPhone 5,iPhone 6,Galaxy S5) */
+@media screen and (min-width: 401px) and (max-width: 414px) {
+    /* 共用容器 */
+    .share_container {
+        width: 100%;
+    }
+    .share_container_l {
+        width: 96%;
+    }
+    input.btn33,
+    button.btn33,
+    a.btn33 {
+        width: 100%;
+    }
+    .col_2 {
+        width: calc(100% - 2%);
+        padding: .2rem .2rem .5rem .2rem;
+    }
+
+}
+
+/* 寬度介於 321px - 400px (iPhone 5,iPhone 6,Galaxy S5) */
+@media screen and (min-width: 321px) and (max-width: 400px) {
+    /* 共用容器 */
+    .share_container {
+        width: 100%;
+    }
+    .share_container_l {
+        width: 96%;
+    }
+    input.btn33,
+    button.btn33,
+    a.btn33 {
+        width: 100%;
+    }
+    .col_2 {
+        width: calc(100% - 2%);
+        padding: .2rem .2rem .5rem .2rem;
+    }
+}
+
+/* 寬度小於 320px */
+@media screen and (max-width: 320px) {
+    /* 共用容器 */
+    .share_container,
+    .share_container_s,
+    .share_container_m,
+    .share_container_l {
+        width: 96%;
+    }
+    input.btn33,
+    button.btn33,
+    a.btn33 {
+        width: 100%;
+    }
+    .col_2 {
+        width: 100%;
+        padding: .2rem .2rem .5rem .2rem;
+    }
+}
+
+/* 寬度小於 280px */
+@media screen and (max-width: 280px) {}
+
+/* 寬度小於 240px */
+@media screen and (max-width: 240px) {}

@@ -1,0 +1,119 @@
+@charset "utf-8";
+/* ===== 基本 Reset & Normalize ===== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html,
+body {
+    height: 100%;
+    color: inherit;
+    font-family: "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: transparent;
+}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border: 0;
+    vertical-align: middle;
+}
+ul,
+ol {
+    list-style: none;
+}
+a {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+span,
+i {
+    vertical-align: middle;
+}
+button,
+input,
+select,
+textarea {
+    margin: 0;
+    line-height: 1.15;
+    color: inherit;
+    font-size: 100%;
+    font-family: inherit;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+}
+select {
+    background-repeat: no-repeat;
+    background-position: right 0.7em center;
+    background-size: 0.65em auto;
+}
+/*Input 的 Placeholder 設定*/
+::-webkit-input-placeholder { /* WebKit browsers:Chrome, Safari */
+    color: #ccc;
+    font-size: 1em;
+    font-weight: normal;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #ccc;
+    font-size: 1em;
+    font-weight: normal;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #ccc;
+    font-size: 1em;
+    font-weight: normal;
+}
+::-ms-input-placeholder { /* IE 10+ */
+    color: #ccc;
+    font-size: 1em;
+    font-weight: normal;
+}
+::placeholder { /* CSS 3 標準 */
+    color: #ccc;
+}
+/* 表格內的ScrollBar樣式設定 */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+/*********  以下為 手機畫面_設定  *********/
+/* 寬度大於 1024px (電腦)*/
+@media screen and (min-width: 1024px) {
+    /* 表格內的ScrollBar樣式設定 */
+    ::-webkit-scrollbar-track {
+        background: #e8e8e8;
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #888;
+    }
+}

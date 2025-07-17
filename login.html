@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" /> <!-- 允許使用者用雙指縮放畫面 -->
+    <meta name="format-detection" content="telephone=no, email=no" /> <!-- 禁止數字識別為電話或email -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/reset.css?date=20250715" type="text/css" />
+    <!-- 共用樣式 css -->
+    <link rel="stylesheet" href="css/share.css?date=20250715" type="text/css" />
+    <!-- 所有樣式 css -->
+    <link rel="stylesheet" href="css/new_style.css?date=20250715" type="text/css" />
+    <!-- 跳框 css -->
+    <link rel="stylesheet" href="css/popup.css?date=20250715" type="text/css" />
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- JQuery共用檔(有用JQuery必先讀這支，如跳框) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js?date=20250715"></script>
+    <!-- JS(所有頁面共用) -->
+    <script src="js/new_all.js?date=20250715" defer></script>
+    <title>好位子語言學習</title>
+</head>
+<body>
+    <!-- 遮罩層：點擊時可關閉手機版側邊欄 -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- 回到頂端 -->
+    <div class="go_top">
+        <img src="images/go_top.png?date=20250715" alt="">
+    </div>
+
+    <!-- 左側欄位 -->
+    <nav id="sidebar" class="sidebar_box">
+        <!-- 選單列滑出效果 -->
+        <ul id="inside" class="inside">
+            <li class="sidebar_list">
+                <img id="sidebarLogo" src="images/index/logo_white.png?date=20250715"
+                    onclick="window.open('index.html','_self');" class="sidebar_logo">
+            </li>
+            <li class="sidebar_list">
+                <div class="link" onclick="window.open('index.html','_self');">
+                    <div class="link_left">
+                        <img src="images/index/sidebar_icon1.png?date=20250715" alt="" class="sidebar_pic">
+                        <div>首頁</div>
+                    </div>
+                </div>
+            </li>
+            <li class="sidebar_list">
+                <div class="link">
+                    <div class="link_left">
+                        <img src="images/index/sidebar_icon2.png?date=20250715" alt="" class="sidebar_pic">
+                        <div>勞動部課程</div>
+                    </div>
+                    <i class="fa-solid fa-caret-down arrow-icon"></i>
+                </div>
+                <ul class="submenu">
+                    <li><a href="class1_1.html" class="submenu_item">第01課：自我介紹</a></li>
+                </ul>
+            </li>
+            <li class="sidebar_list">
+                <div class="link">
+                    <div class="link_left">
+                        <img src="images/index/sidebar_icon3.png?date=20250715" alt="" class="sidebar_pic">
+                        <div>外籍照護技巧</div>
+                    </div>
+                    <i class="fa-solid fa-caret-down arrow-icon"></i>
+                </div>
+                <ul class="submenu">
+                    <li><a href="class2_1.html" class="submenu_item">測量生命徵象</a></li>
+                </ul>
+            </li>
+            <li class="sidebar_list">
+                <div class="link">
+                    <div class="link_left">
+                        <img src="images/index/sidebar_icon4.png?date=20250715" alt="" class="sidebar_pic">
+                        <div>國際外勞、移工教育訓練課程</div>
+                    </div>
+                    <i class="fa-solid fa-caret-down arrow-icon"></i>
+                </div>
+                <ul class="submenu">
+                    <li><a href="class3_1.html" class="submenu_item">幫助外籍移工快速適應工作環境</a></li>
+                </ul>
+            </li>
+            <li class="sidebar_list">
+                <div class="link">
+                    <div class="link_left">
+                        <img src="images/index/sidebar_icon5.png?date=20250715" alt="" class="sidebar_pic">
+                        <div>會員專區</div>
+                    </div>
+                    <i class="fa-solid fa-caret-down arrow-icon"></i>
+                </div>
+                <ul class="submenu">
+                    <li><a href="member_info.html" class="submenu_item">個人檔案</a></li>
+                    <li><a href="favorites.html" class="submenu_item">我的最愛</a></li>
+                </ul>
+            </li>
+            <li class="sidebar_list">
+                <div class="link" onclick="window.open('index.html','_self');">
+                    <div class="link_left">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <div>登出</div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- 右側欄位 -->
+    <div class="main-content" id="mainContent">
+        <!-- 上方導覽列 -->
+        <div class="navbar_box">
+            <div class="header">
+                <!-- 漢堡圖(開啟左側欄位) -->
+                <button id="toggleBtn" aria-label="切換側邊欄" class="toggle-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <!-- 網站標題 -->
+                <div class="logo_title">
+                    <span>好位子語言學習</span>
+                </div>
+            </div>
+            <div class="navbar">
+                <!-- 電腦版_資訊列(當切換成手機版螢幕，則隱藏) -->
+                <ul class="nav_pc">
+                    <!-- 語系 -->
+                    <li class="navbar_list nav_lang">
+                        <i class="fa-solid fa-earth-americas"></i>
+                        <select class="language-select">
+                            <option value="zh">繁體中文</option>
+                            <option value="en">English</option>
+                            <option value="id">Bahasa Indonesia</option>
+                        </select>
+                    </li>
+                    <!-- 用戶名 -->
+                    <li class="navbar_list nav_user">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <div id="UserName" class="user_name">Alice54321</div>
+                    </li>
+                    <!-- 登入/註冊 -->
+                    <li class="navbar_list nav_login">
+                        <i class="fa-solid fa-user"></i>
+                        <div class="navbar_text" onclick="window.open('login.html','_self');">登入/註冊</div>
+                    </li>
+                    <!-- 登出 -->
+                    <li class="navbar_list nav_logout" style="display: none;">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <div class="navbar_text" onclick="window.open('index.html','_self');">登出</div>
+                    </li>
+                </ul>
+                <!-- 切換版色 -->
+                <div class="color_change">
+                    <div id="themeToggle" class="theme-toggle">
+                        <i id="themeIcon" class="fa-solid fa-moon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 手機版_按鈕，按下去則會出現下方的資訊列 -->
+        <button id="navBtnToggle" class="navbar_toggle">
+            <i class="fa-solid fa-up-down"></i>
+        </button>
+        <!-- 手機版_資訊列 -->
+        <ul class="navbar nav_mobile">
+            <!-- 語系 -->
+            <li class="navbar_list nav_lang">
+                <i class="fa-solid fa-earth-americas"></i>
+                <select class="language-select">
+                    <option value="zh">繁體中文</option>
+                    <option value="en">English</option>
+                    <option value="id">Bahasa Indonesia</option>
+                </select>
+            </li>
+            <!-- 用戶名 -->
+            <li class="navbar_list nav_user">
+                <i class="fa-solid fa-circle-user"></i>
+                <div id="UserName" class="user_name">Alice54321</div>
+            </li>
+            <!-- 登入/註冊 -->
+            <li class="navbar_list nav_login">
+                <i class="fa-solid fa-user"></i>
+                <div class="navbar_text" onclick="window.open('login.html','_self');">登入/註冊</div>
+            </li>
+            <!-- 登出 -->
+            <li class="navbar_list nav_logout" style="display: none;">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <div class="navbar_text" onclick="window.open('index.html','_self');">登出</div>
+            </li>
+        </ul>
+
+        <!-- 下方內容 -->
+        <div class="content_area">
+            <!-- 麵包屑 -->
+            <div class="breadcrumb_box">
+                <ul class="breadcrumb">
+                    <li><a href="index.html">首頁</a></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+
+            <!-- 公告 -->
+            <div class="boxset">
+                <!-- 標題 -->
+                <div class="box_title">
+                    <span>公告</span>
+                </div>
+
+                <!-- 內容 -->
+                <div class="box_inside loginbox">
+                    <div class="share_container_l">
+                        <!-- 第三方登入 -->
+                        <div class="another_login br10 mb10">
+                            <span>使用第三方帳號登入</span>
+                            <img src="images/index/line.png?date=20250715" class="another_logo">
+                            <img src="images/index/google.png?date=20250715" class="another_logo">
+                        </div>
+                        <!-- 登入/註冊 -->
+                        <div class="login_info">
+                            <!-- 登入 -->
+                            <div class="login_inner login">
+                                <div class="box_title">
+                                    <i class="fa-solid fa-user"></i>
+                                    <span>登入</span>
+                                </div>
+                                <!-- 帳號 -->
+                                <div class="col_flex jc_bt">
+                                    <div class="col_title text_left">
+                                        <span>帳號或電子郵件</span>
+                                    </div>
+                                    <div class="col_item">
+                                        <input type="text" placeholder="請輸入帳號或電子郵件" minlength="6" maxlength="20" onkeyup="value=value.replace(/[\W]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" class="input100" required>
+                                    </div>
+                                </div>
+                                <!-- 密碼 -->
+                                <div class="col_flex jc_bt">
+                                    <div class="col_title text_left">
+                                        <span>密碼</span>
+                                    </div>
+                                    <div class="col_item position_r">
+                                        <input type="password" id="inputPW" placeholder="12-20個英數字組合" minlength="12" maxlength="20" onkeyup="value=value.replace(/[\W]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" class="input100" required>
+                                        <!-- 眼睛圖示(顯示/隱藏) -->
+                                        <div class="share_eyes">
+                                            <i id="checkEye" class="fa-regular fa-eye"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <!-- 記住帳號密碼 -->
+                                <div class="col_flex jc_bt">
+                                    <div class="col_checkbox">
+                                        <label for="rememberPW">
+                                            <input type="checkbox" id="rememberPW" name="remember" class="check_box">
+                                            <span>記住帳號密碼</span>
+                                        </label>
+                                    </div>
+                                    <!-- 忘記密碼 -->
+                                    <div class="col_checkbox">
+                                        <a href="#" onclick="$('#popup_forgotpw').show();" class="text_red">忘記密碼？</a>
+                                    </div>
+                                </div>
+                                <!-- 按鈕 -->
+                                <div class="btn_box ai_center jc_center">
+                                    <input type="submit" onclick="$('#popup_SentSuccess').show();" value="確認送交" class="btn_superbig br10 btn100 btn_blue">
+                                </div>
+                            </div>
+                            <!-- 註冊 -->
+                            <div class="login_inner register">
+                                <div class="box_title">
+                                    <i class="fa-solid fa-user-plus"></i>
+                                    <span>註冊</span>
+                                </div>
+                                <!-- 帳號 -->
+                                <div class="col_flex jc_bt">
+                                    <div class="col_title text_left">
+                                        <span>電子郵件</span>
+                                    </div>
+                                    <div class="col_item">
+                                        <input type="email" placeholder="請輸入電子郵件" class="input100" required>
+                                    </div>
+                                </div>
+                                <!-- 密碼 -->
+                                <div class="col_flex jc_bt">
+                                    <div class="col_title text_left">
+                                        <span>密碼</span>
+                                    </div>
+                                    <div class="col_item position_r">
+                                        <input type="password" id="inputPW2" placeholder="12-20個英數字組合" minlength="12" maxlength="20" onkeyup="value=value.replace(/[\W]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" class="input100" required>
+                                        <!-- 眼睛圖示(顯示/隱藏) -->
+                                        <div class="share_eyes">
+                                            <i id="checkEye2" class="fa-regular fa-eye"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="pw_tips text_red">提示: 建議密碼應該至少要有 12 個字元，並在密碼中同時使用大小寫字母、數字及 ! " ? $ % ^ & ) 等特殊符號，便能讓密碼更安全。</div>
+                                <!-- 按鈕 -->
+                                <div class="btn_box ai_center jc_center">
+                                    <input type="submit" onclick="$('#popup_SentSuccess').show();" value="確認送交" class="btn_superbig br10 btn100 btn_green">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 跳框-忘記密碼 -->
+    <div id="popup_forgotpw" class="popup_blackbg popup-forgotpw" style="display: none;">
+        <div class="share_popupbox">
+            <!-- share_popup_s可以指定框的大小，最小s，中m，大l -->
+            <div class="share_popup_s">
+                <!-- 標題 -->
+                <div class="share_popup_header">
+                    <i class="fa-solid fa-key"></i>
+                    <span>忘記密碼</span>
+                    <div class="popup_close" onclick="$('#popup_forgotpw').hide();">
+                        <i class="fa-solid fa-x"></i>
+                    </div>
+                </div>
+                <!-- 內容 -->
+                <div class="popup_sharebox bg_white">
+                    <!-- 內容 -->
+                    <div class="popup_share_title text_center">忘記您的密碼嗎？請輸入您的帳號或註冊的電子郵件。您將會在電子郵件信箱中收到重設密碼的連結。</div>
+                    <!-- 手機號碼 -->
+                    <div class="col_flex jc_bt">
+                        <div class="col_title text_right">
+                            <span>電子郵件</span>
+                        </div>
+                        <div class="col_item">
+                            <input type="email" placeholder="請輸入電子郵件" class="input100" required>
+                        </div>
+                    </div>
+                    <!-- 按鈕 -->
+                    <div class="btn_box ai_center jc_center">
+                        <input type="button" value="取消" onclick="$('#popup_forgotpw').hide();" class="btn_superbig br10 btn50 btn_gray">
+                        <input type="button" value="確認送交" onclick="$('#popup_forgotpw').hide(),$('#popup_SentSuccess').show();" class="btn_superbig br10 btn50 btn_blue">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 跳框_再次確認 -->
+    <div id="popup_Confirm" class="popup_blackbg popup-confirm" style="display: none;">
+        <div class="share_popupbox">
+            <!-- share_popup_s可以指定框的大小，最小s，中m，大l -->
+            <div class="share_popup_s">
+                <!-- 標題 -->
+                <div class="share_popup_header">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <span>提示</span>
+                    <div class="popup_close" onclick="$('#popup_Confirm').hide();">
+                        <i class="fa-solid fa-x"></i>
+                    </div>
+                </div>
+                <!-- 內容 -->
+                <div class="popup_sharebox bg_white">
+                    <div class="popup_share_title text_center"> 請確認資料都正確嗎？ </div>
+                    <!-- 按鈕 -->
+                    <div class="btn_box ai_center jc_center">
+                        <input type="button" value="取消" onclick="$('#popup_Confirm').hide();" class="btn_superbig br10 btn50 btn_gray">
+                        <input type="submit" value="確認" onclick="$('#popup_Confirm').hide(), $('#popup_SentSuccess').show();" class="btn_superbig br10 btn50 btn_blue">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 跳框-成功 -->
+    <div id="popup_SentSuccess" class="popup_blackbg popup-success" style="display: none;">
+        <div class="share_popupbox">
+            <!-- share_popup_s可以指定框的大小，最小s，中m，大l -->
+            <div class="share_popup_s">
+                <!-- 標題 -->
+                <div class="share_popup_header">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <span>提示</span>
+                    <div class="popup_close" onclick="$('#popup_SentSuccess').hide();">
+                        <i class="fa-solid fa-x"></i>
+                    </div>
+                </div>
+                <!-- 內容 -->
+                <div class="popup_sharebox bg_white">
+                    <div class="popup_share_title text_center">送出成功！</div>
+                    <!-- 按鈕 -->
+                    <div class="btn_box ai_center jc_center">
+                        <input type="button" value="關閉" onclick="$('#popup_SentSuccess').hide();" class="btn_superbig br10 btn50 btn_gray">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 跳框-失敗 -->
+    <div id="popup_SentFail" class="popup_blackbg popup-fail" style="display: none;">
+        <div class="share_popupbox">
+            <!-- share_popup_s可以指定框的大小，最小s，中m，大l -->
+            <div class="share_popup_s">
+                <!-- 標題 -->
+                <div class="share_popup_header">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <span>警告</span>
+                    <div class="popup_close" onclick="$('#popup_SentFail').hide();">
+                        <i class="fa-solid fa-x"></i>
+                    </div>
+                </div>
+                <!-- 內容 -->
+                <div class="popup_sharebox bg_white">
+                    <div class="popup_share_title text_center">資訊有誤，請重新檢查後再送出。</div>
+                    <!-- 按鈕 -->
+                    <div class="btn_box ai_center jc_center">
+                        <input type="button" value="關閉" onclick="$('#popup_SentFail').hide();" class="btn_superbig br10 btn50 btn_gray">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

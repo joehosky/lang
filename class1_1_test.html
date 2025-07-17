@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" /> <!-- 允許使用者用雙指縮放畫面 -->
+    <meta name="format-detection" content="telephone=no, email=no" /> <!-- 禁止數字識別為電話或email -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/reset.css?date=20250715" type="text/css" />
+    <!-- 共用樣式 css -->
+    <link rel="stylesheet" href="css/share.css?date=20250715" type="text/css" />
+    <!-- 所有樣式 css -->
+    <link rel="stylesheet" href="css/new_style.css?date=20250715" type="text/css" />
+    <!-- 跳框 css -->
+    <link rel="stylesheet" href="css/popup.css?date=20250715" type="text/css" />
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- JQuery共用檔(有用JQuery必先讀這支，如跳框) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js?date=20250715"></script>
+    <!-- 考試JS -->
+    <script src="js/quiz.js?date=20250715" defer></script>
+    <!-- JS(所有頁面共用) -->
+    <script src="js/new_all.js?date=20250715" defer></script>
+    <title>好位子 | 考試</title>
+</head>
+<body>
+    <!-- 遮罩層：點擊時可關閉手機版側邊欄 -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- 回到頂端 -->
+    <div class="go_top">
+        <img src="images/go_top.png?date=20250715" alt="">
+    </div>
+
+    <!-- 左側欄位 -->
+    <nav id="sidebar" class="sidebar_box">
+        <!-- 選單列滑出效果 -->
+        <ul id="inside" class="inside">
+            <li class="sidebar_list">
+                <img id="sidebarLogo" src="images/index/logo_white.png?date=20250715"
+                    onclick="window.open('index.html','_self');" class="sidebar_logo">
+            </li>
+            <li class="sidebar_list">
+                <div class="link" onclick="window.open('index.html','_self');">
+                    <div class="link_left">
+                        <img src="images/index/sidebar_icon1.png?date=20250715" alt="" class="sidebar_pic">
+                        <div>首頁</div>
+                    </div>
+                </div>
+            </li>
+            <li class="sidebar_list">
+                <div class="link">
+                    <div class="link_left">
+                        <img src="images/index/sidebar_icon2.png?date=20250715" alt="" class="sidebar_pic">
+                        <div>勞動部課程</div>
+                    </div>
+                    <i class="fa-solid fa-caret-down arrow-icon"></i>
+                </div>
+                <ul class="submenu">
+                    <li><a href="class1_1.html" class="submenu_item">第01課：自我介紹</a></li>
+                </ul>
+            </li>
+            <li class="sidebar_list">
+                <div class="link">
+                    <div class="link_left">
+                        <img src="images/index/sidebar_icon3.png?date=20250715" alt="" class="sidebar_pic">
+                        <div>外籍照護技巧</div>
+                    </div>
+                    <i class="fa-solid fa-caret-down arrow-icon"></i>
+                </div>
+                <ul class="submenu">
+                    <li><a href="class2_1.html" class="submenu_item">測量生命徵象</a></li>
+                </ul>
+            </li>
+            <li class="sidebar_list">
+                <div class="link">
+                    <div class="link_left">
+                        <img src="images/index/sidebar_icon4.png?date=20250715" alt="" class="sidebar_pic">
+                        <div>國際外勞、移工教育訓練課程</div>
+                    </div>
+                    <i class="fa-solid fa-caret-down arrow-icon"></i>
+                </div>
+                <ul class="submenu">
+                    <li><a href="class3_1.html" class="submenu_item">幫助外籍移工快速適應工作環境</a></li>
+                </ul>
+            </li>
+            <li class="sidebar_list">
+                <div class="link">
+                    <div class="link_left">
+                        <img src="images/index/sidebar_icon5.png?date=20250715" alt="" class="sidebar_pic">
+                        <div>會員專區</div>
+                    </div>
+                    <i class="fa-solid fa-caret-down arrow-icon"></i>
+                </div>
+                <ul class="submenu">
+                    <li><a href="member_info.html" class="submenu_item">個人檔案</a></li>
+                    <li><a href="favorites.html" class="submenu_item">我的最愛</a></li>
+                </ul>
+            </li>
+            <li class="sidebar_list">
+                <div class="link" onclick="window.open('index.html','_self');">
+                    <div class="link_left">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <div>登出</div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- 右側欄位 -->
+    <div class="main-content" id="mainContent">
+        <!-- 上方導覽列 -->
+        <div class="navbar_box">
+            <div class="header">
+                <!-- 漢堡圖(開啟左側欄位) -->
+                <button id="toggleBtn" aria-label="切換側邊欄" class="toggle-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <!-- 網站標題 -->
+                <div class="logo_title">
+                    <span>好位子語言學習</span>
+                </div>
+            </div>
+            <div class="navbar">
+                <!-- 電腦版_資訊列(當切換成手機版螢幕，則隱藏) -->
+                <ul class="nav_pc">
+                    <!-- 語系 -->
+                    <li class="navbar_list nav_lang">
+                        <i class="fa-solid fa-earth-americas"></i>
+                        <select class="language-select">
+                            <option value="zh">繁體中文</option>
+                            <option value="en">English</option>
+                            <option value="id">Bahasa Indonesia</option>
+                        </select>
+                    </li>
+                    <!-- 用戶名 -->
+                    <li class="navbar_list nav_user">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <div id="UserName" class="user_name">Alice54321</div>
+                    </li>
+                    <!-- 登入/註冊 -->
+                    <li class="navbar_list nav_login">
+                        <i class="fa-solid fa-user"></i>
+                        <div class="navbar_text" onclick="window.open('login.html','_self');">登入/註冊</div>
+                    </li>
+                    <!-- 登出 -->
+                    <li class="navbar_list nav_logout" style="display: none;">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <div class="navbar_text" onclick="window.open('index.html','_self');">登出</div>
+                    </li>
+                </ul>
+                <!-- 切換版色 -->
+                <div class="color_change">
+                    <div id="themeToggle" class="theme-toggle">
+                        <i id="themeIcon" class="fa-solid fa-moon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 手機版_按鈕，按下去則會出現下方的資訊列 -->
+        <button id="navBtnToggle" class="navbar_toggle">
+            <i class="fa-solid fa-up-down"></i>
+        </button>
+        <!-- 手機版_資訊列 -->
+        <ul class="navbar nav_mobile">
+            <!-- 語系 -->
+            <li class="navbar_list nav_lang">
+                <i class="fa-solid fa-earth-americas"></i>
+                <select class="language-select">
+                    <option value="zh">繁體中文</option>
+                    <option value="en">English</option>
+                    <option value="id">Bahasa Indonesia</option>
+                </select>
+            </li>
+            <!-- 用戶名 -->
+            <li class="navbar_list nav_user">
+                <i class="fa-solid fa-circle-user"></i>
+                <div id="UserName" class="user_name">Alice54321</div>
+            </li>
+            <!-- 登入/註冊 -->
+            <li class="navbar_list nav_login">
+                <i class="fa-solid fa-user"></i>
+                <div class="navbar_text" onclick="window.open('login.html','_self');">登入/註冊</div>
+            </li>
+            <!-- 登出 -->
+            <li class="navbar_list nav_logout" style="display: none;">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <div class="navbar_text" onclick="window.open('index.html','_self');">登出</div>
+            </li>
+        </ul>
+
+        <!-- 下方內容 -->
+        <div class="content_area">
+            <!-- 麵包屑 -->
+            <div class="breadcrumb_box">
+                <ul class="breadcrumb">
+                    <li><a href="index.html">首頁</a></li>
+                    <li><a href="class1_1.html">勞動部課程</a></li>
+                    <li>第01課：自我介紹</li>
+                </ul>
+            </div>
+
+            <!-- 課程 -->
+            <div class="boxset">
+                <!-- 標題 -->
+                <div class="box_title">
+                    <span>第01課：自我介紹</span>
+                </div>
+
+                <!-- 內容 -->
+                <div class="box_inside testbox">
+                    <div class="share_container_m">
+                        <!-- 可選題目頁數 -->
+                        <div class="testcard_box">
+                            <ul class="number_item">
+                                <li class="page-link active">
+                                    <a href="#qt_01">1</a>
+                                </li>
+                                <li class="page-link">
+                                    <a href="#qt_02">2</a>
+                                </li>
+                                <li class="page-link">
+                                    <a href="#qt_03">3</a>
+                                </li>
+                                <li class="page-link">
+                                    <a href="#qt_04">4</a>
+                                </li>
+                                <li class="page-link">
+                                    <a href="#qt_05">5</a>
+                                </li>
+                                <li class="page-link">
+                                    <a href="#qt_06">6</a>
+                                </li>
+                                <li class="page-link">
+                                    <a href="#qt_07">7</a>
+                                </li>
+                                <li class="page-link">
+                                    <a href="#qt_08">8</a>
+                                </li>
+                                <li class="page-link">
+                                    <a href="#qt_09">9</a>
+                                </li>
+                                <li class="page-link">
+                                    <a href="#qt_10">10</a>
+                                </li>
+                                <li class="page-link">
+                                    <a href="#qt_11">11</a>
+                                </li>
+                                <li class="page-link">
+                                    <a href="#qt_12">12</a>
+                                </li>
+                                <li class="page-link">
+                                    <a href="#qt_13">13</a>
+                                </li>
+                                <li class="page-link">
+                                    <a href="#qt_14">14</a>
+                                </li>
+                                <li class="page-link">
+                                    <a href="#qt_15">15</a>
+                                </li>
+                            </ul>
+                            <!-- 考試主題 -->
+                            <div class="testcard_heading">Percakapan Lewat Telepon</div>
+                            <!-- 考題1 -->
+                            <div id="qt_01" class="testcard_questions qt_01">
+                                <div class="ql_number">1/15</div>
+                                <div class="ql_title">
+                                    <button class="sound_btn">
+                                        <i class="fa-solid fa-volume-high"></i>
+                                        <div class="test_text">(1) Kata Mandarin untuk “malam hari” ialah…</div>
+                                    </button>
+                                </div>
+                                <ul class="questions_list">
+                                    <li class="col_1">請選擇正確的答案</li>
+                                    <!-- "選擇"時在"ql_item"後面加"selected"，"答錯"加"wrong"，"答對"加"correct" -->
+                                    <li class="ql_item">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="test_text">A.早</div>
+                                        </button>
+                                    </li>
+                                    <li class="ql_item">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="test_text">B.打</div>
+                                        </button>
+                                    </li>
+                                    <li class="ql_item">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="test_text">C.太太</div>
+                                        </button>
+                                    </li>
+                                    <li class="ql_item">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="test_text">D.晚上</div>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- 考題2 -->
+                            <div id="qt_02" class="testcard_questions qt_02" style="display: none;">
+                                <div class="ql_number">2/15</div>
+                                <div class="ql_title">
+                                    <button class="sound_btn">
+                                        <i class="fa-solid fa-volume-high"></i>
+                                        <div class="test_text">(2) Kata Mandarin untuk “segera” ialah… </div>
+                                    </button>
+                                </div>
+                                <ul class="questions_list">
+                                    <li class="col_1">請選擇正確的答案</li>
+                                    <li class="ql_item">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="test_text">A.太太</div>
+                                        </button>
+                                    </li>
+                                    <li class="ql_item">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="test_text">B.接</div>
+                                        </button>
+                                    </li>
+                                    <li class="ql_item">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="test_text">C.馬上</div>
+                                        </button>
+                                    </li>
+                                    <li class="ql_item">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="test_text">D.請</div>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- 考題3 -->
+                            <div id="qt_03" class="testcard_questions qt_03" style="display: none;">
+                                <div class="ql_number">3/15</div>
+                                <div class="ql_title">
+                                    <button class="sound_btn">
+                                        <i class="fa-solid fa-volume-high"></i>
+                                        <div class="test_text">(3) Kata sapaan “halo” di telepon dalam Mandarin ialah…</div>
+                                    </button>
+                                </div>
+                                <ul class="questions_list">
+                                    <li class="col_1">請選擇正確的答案</li>
+                                    <li class="ql_item">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="test_text">A. 接</div>
+                                        </button>
+                                    </li>
+                                    <li class="ql_item">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="test_text">B. 也</div>
+                                        </button>
+                                    </li>
+                                    <li class="ql_item">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="test_text">C. 在家</div>
+                                        </button>
+                                    </li>
+                                    <li class="ql_item">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="test_text">D. 喂</div>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- 考題4 -->
+                            <div id="qt_04" class="testcard_questions qt_04" style="display: none;">
+                                <div class="ql_number">4/15</div>
+                                <div class="ql_title">
+                                    <button class="sound_btn">
+                                        <i class="fa-solid fa-volume-high"></i>
+                                        <div class="test_text">(4) Kata Mandarin untuk “mencari” ialah…</div>
+                                    </button>
+                                </div>
+                                <ul class="questions_list">
+                                    <li class="col_1">請選擇正確的答案</li>
+                                    <li class="ql_item">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="test_text">A. 打</div>
+                                        </button>
+                                    </li>
+                                    <li class="ql_item">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="test_text">B. 電話</div>
+                                        </button>
+                                    </li>
+                                    <li class="ql_item">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="test_text">C. 找</div>
+                                        </button>
+                                    </li>
+                                    <li class="ql_item">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="test_text">D.請</div>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- 考題5 -->
+                            <div id="qt_05" class="testcard_questions qt_05" style="display: none;">
+                                <div class="ql_number">5/15</div>
+                                <div class="ql_title">
+                                    <button class="sound_btn">
+                                        <i class="fa-solid fa-volume-high"></i>
+                                        <div class="test_text">(5) Kata Mandarin untuk “mencari” ialah…</div>
+                                    </button>
+                                </div>
+                                <ul class="questions_list">
+                                    <li class="col_1">請選擇正確的答案</li>
+                                    <li class="ql_item">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="test_text">A. 打</div>
+                                        </button>
+                                    </li>
+                                    <li class="ql_item">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="test_text">B. 電話</div>
+                                        </button>
+                                    </li>
+                                    <li class="ql_item">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="test_text">C. 找</div>
+                                        </button>
+                                    </li>
+                                    <li class="ql_item">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="test_text">D.請</div>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- 考題6 -->
+                            <div id="qt_06" class="testcard_questions qt_06" style="display: none;">
+                                <div class="ql_number">6/15</div>
+                                <div class="ql_title">
+                                    <button class="sound_btn">
+                                        <i class="fa-solid fa-volume-high"></i>
+                                        <div class="test_text">(6) Kata Mandarin untuk “mencari” ialah…</div>
+                                    </button>
+                                </div>
+                                <ul class="questions_list">
+                                    <li class="col_1">請選擇正確的答案</li>
+                                    <li class="ql_item">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="test_text">A. 打</div>
+                                        </button>
+                                    </li>
+                                    <li class="ql_item">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="test_text">B. 電話</div>
+                                        </button>
+                                    </li>
+                                    <li class="ql_item">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="test_text">C. 找</div>
+                                        </button>
+                                    </li>
+                                    <li class="ql_item">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="test_text">D.請</div>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- 考題7 -->
+                            <div id="qt_07" class="testcard_questions qt_07" style="display: none;">
+                                <div class="ql_number">7/15</div>
+                                <div class="ql_title">
+                                    <button class="sound_btn">
+                                        <i class="fa-solid fa-volume-high"></i>
+                                        <div class="test_text">(7) Kata Mandarin untuk “mencari” ialah…</div>
+                                    </button>
+                                </div>
+                                <ul class="questions_list">
+                                    <li class="col_1">請選擇正確的答案</li>
+                                    <li class="ql_item">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="test_text">A. 打</div>
+                                        </button>
+                                    </li>
+                                    <li class="ql_item">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="test_text">B. 電話</div>
+                                        </button>
+                                    </li>
+                                    <li class="ql_item">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="test_text">C. 找</div>
+                                        </button>
+                                    </li>
+                                    <li class="ql_item">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="test_text">D.請</div>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- 考題8 -->
+                            <div id="qt_08" class="testcard_questions qt_08" style="display: none;">
+                                <div class="ql_number">8/15</div>
+                                <div class="ql_title">
+                                    <button class="sound_btn">
+                                        <i class="fa-solid fa-volume-high"></i>
+                                        <div class="test_text">(8) Kata Mandarin untuk “mencari” ialah…</div>
+                                    </button>
+                                </div>
+                                <ul class="questions_list">
+                                    <li class="col_1">請選擇正確的答案</li>
+                                    <li class="ql_item">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="test_text">A. 打</div>
+                                        </button>
+                                    </li>
+                                    <li class="ql_item">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="test_text">B. 電話</div>
+                                        </button>
+                                    </li>
+                                    <li class="ql_item">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="test_text">C. 找</div>
+                                        </button>
+                                    </li>
+                                    <li class="ql_item">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="test_text">D.請</div>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- 考題9 -->
+                            <div id="qt_09" class="testcard_questions qt_09" style="display: none;">
+                                <div class="ql_number">9/15</div>
+                                <div class="ql_title">
+                                    <button class="sound_btn">
+                                        <i class="fa-solid fa-volume-high"></i>
+                                        <div class="test_text">(9) Kata Mandarin untuk “mencari” ialah…</div>
+                                    </button>
+                                </div>
+                                <ul class="questions_list">
+                                    <li class="col_1">請選擇正確的答案</li>
+                                    <li class="ql_item">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="test_text">A. 打</div>
+                                        </button>
+                                    </li>
+                                    <li class="ql_item">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="test_text">B. 電話</div>
+                                        </button>
+                                    </li>
+                                    <li class="ql_item">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="test_text">C. 找</div>
+                                        </button>
+                                    </li>
+                                    <li class="ql_item">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="test_text">D.請</div>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- 考題10 -->
+                            <div id="qt_10" class="testcard_questions qt_10" style="display: none;">
+                                <div class="ql_number">10/15</div>
+                                <div class="ql_title">
+                                    <button class="sound_btn">
+                                        <i class="fa-solid fa-volume-high"></i>
+                                        <div class="test_text">(10) Kata Mandarin untuk “mencari” ialah…</div>
+                                    </button>
+                                </div>
+                                <ul class="questions_list">
+                                    <li class="col_1">請選擇正確的答案</li>
+                                    <li class="ql_item">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="test_text">A. 打</div>
+                                        </button>
+                                    </li>
+                                    <li class="ql_item">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="test_text">B. 電話</div>
+                                        </button>
+                                    </li>
+                                    <li class="ql_item">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="test_text">C. 找</div>
+                                        </button>
+                                    </li>
+                                    <li class="ql_item">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="test_text">D.請</div>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- 考題11 -->
+                            <div id="qt_11" class="testcard_questions qt_11" style="display: none;">
+                                <div class="ql_number">11/15</div>
+                                <div class="ql_title">
+                                    <button class="sound_btn">
+                                        <i class="fa-solid fa-volume-high"></i>
+                                        <div class="test_text">(11) Kata Mandarin untuk “mencari” ialah…</div>
+                                    </button>
+                                </div>
+                                <ul class="questions_list">
+                                    <li class="col_1">請選擇正確的答案</li>
+                                    <li class="ql_item">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="test_text">A. 打</div>
+                                        </button>
+                                    </li>
+                                    <li class="ql_item">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="test_text">B. 電話</div>
+                                        </button>
+                                    </li>
+                                    <li class="ql_item">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="test_text">C. 找</div>
+                                        </button>
+                                    </li>
+                                    <li class="ql_item">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="test_text">D.請</div>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- 考題12 -->
+                            <div id="qt_12" class="testcard_questions qt_12" style="display: none;">
+                                <div class="ql_number">12/15</div>
+                                <div class="ql_title">
+                                    <button class="sound_btn">
+                                        <i class="fa-solid fa-volume-high"></i>
+                                        <div class="test_text">(12) Kata Mandarin untuk “mencari” ialah…</div>
+                                    </button>
+                                </div>
+                                <ul class="questions_list">
+                                    <li class="col_1">請選擇正確的答案</li>
+                                    <li class="ql_item">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="test_text">A. 打</div>
+                                        </button>
+                                    </li>
+                                    <li class="ql_item">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="test_text">B. 電話</div>
+                                        </button>
+                                    </li>
+                                    <li class="ql_item">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="test_text">C. 找</div>
+                                        </button>
+                                    </li>
+                                    <li class="ql_item">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="test_text">D.請</div>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- 考題13 -->
+                            <div id="qt_13" class="testcard_questions qt_13" style="display: none;">
+                                <div class="ql_number">13/15</div>
+                                <div class="ql_title">
+                                    <button class="sound_btn">
+                                        <i class="fa-solid fa-volume-high"></i>
+                                        <div class="test_text">(13) Kata Mandarin untuk “mencari” ialah…</div>
+                                    </button>
+                                </div>
+                                <ul class="questions_list">
+                                    <li class="col_1">請選擇正確的答案</li>
+                                    <li class="ql_item">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="test_text">A. 打</div>
+                                        </button>
+                                    </li>
+                                    <li class="ql_item">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="test_text">B. 電話</div>
+                                        </button>
+                                    </li>
+                                    <li class="ql_item">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="test_text">C. 找</div>
+                                        </button>
+                                    </li>
+                                    <li class="ql_item">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="test_text">D.請</div>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- 考題14 -->
+                            <div id="qt_14" class="testcard_questions qt_14" style="display: none;">
+                                <div class="ql_number">14/15</div>
+                                <div class="ql_title">
+                                    <button class="sound_btn">
+                                        <i class="fa-solid fa-volume-high"></i>
+                                        <div class="test_text">(14) Kata Mandarin untuk “mencari” ialah…</div>
+                                    </button>
+                                </div>
+                                <ul class="questions_list">
+                                    <li class="col_1">請選擇正確的答案</li>
+                                    <li class="ql_item">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="test_text">A. 打</div>
+                                        </button>
+                                    </li>
+                                    <li class="ql_item">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="test_text">B. 電話</div>
+                                        </button>
+                                    </li>
+                                    <li class="ql_item">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="test_text">C. 找</div>
+                                        </button>
+                                    </li>
+                                    <li class="ql_item">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="test_text">D.請</div>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- 考題15 -->
+                            <div id="qt_15" class="testcard_questions qt_15" style="display: none;">
+                                <div class="ql_number">15/15</div>
+                                <div class="ql_title">
+                                    <button class="sound_btn">
+                                        <i class="fa-solid fa-volume-high"></i>
+                                        <div class="test_text">(15) Kata Mandarin untuk “mencari” ialah…</div>
+                                    </button>
+                                </div>
+                                <ul class="questions_list">
+                                    <li class="col_1">請選擇正確的答案</li>
+                                    <li class="ql_item">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="test_text">A. 打</div>
+                                        </button>
+                                    </li>
+                                    <li class="ql_item">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="test_text">B. 電話</div>
+                                        </button>
+                                    </li>
+                                    <li class="ql_item">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="test_text">C. 找</div>
+                                        </button>
+                                    </li>
+                                    <li class="ql_item">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="test_text">D.請</div>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- 按鈕 -->
+                        <div class="btn_box ai_center jc_center">
+                            <!-- 上一題 -->
+                            <input type="button" value="上一題" class="btn_superbig br10 btn50 test btn_gray" style="display: none;">
+                            <!-- 下一題 -->
+                            <input type="button" value="下一題" class="btn_superbig br10 btn50 test btn_blue">
+                            <!-- 確認送出 -->
+                            <input type="submit" value="確認送出" onclick="$('#popup_Confirm').show();" class="btn_superbig br10 btn50 test btn_green" style="display: none;">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 跳框_再次確認 -->
+    <div id="popup_Confirm" class="popup_blackbg popup-confirm" style="display: none;">
+        <div class="share_popupbox">
+            <!-- share_popup_s可以指定框的大小，最小s，中m，大l -->
+            <div class="share_popup_s">
+                <!-- 標題 -->
+                <div class="share_popup_header">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <span>提示</span>
+                    <div class="popup_close" onclick="$('#popup_Confirm').hide();">
+                        <i class="fa-solid fa-x"></i>
+                    </div>
+                </div>
+                <!-- 內容 -->
+                <div class="popup_sharebox bg_white">
+                    <div class="popup_share_title text_center"> 請確認填寫的資料都正確嗎？ </div>
+                    <!-- 按鈕 -->
+                    <div class="btn_box ai_center jc_center">
+                        <input type="button" value="取消" onclick="$('#popup_Confirm').hide(), $('#popup_Register').show();" class="btn_superbig br10 btn50 btn_gray">
+                        <input type="submit" value="確認" onclick="$('#popup_Confirm').hide(), $('#popup_SentSuccess').show();" class="btn_superbig br10 btn50 btn_blue">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 跳框-成功 -->
+    <div id="popup_SentSuccess" class="popup_blackbg popup-success" style="display: none;">
+        <div class="share_popupbox">
+            <!-- share_popup_s可以指定框的大小，最小s，中m，大l -->
+            <div class="share_popup_s">
+                <!-- 標題 -->
+                <div class="share_popup_header">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <span>提示</span>
+                    <div class="popup_close" onclick="$('#popup_SentSuccess').hide();">
+                        <i class="fa-solid fa-x"></i>
+                    </div>
+                </div>
+                <!-- 內容 -->
+                <div class="popup_sharebox bg_white">
+                    <div class="popup_share_title text_center">送出成功！</div>
+                    <!-- 按鈕 -->
+                    <div class="btn_box ai_center jc_center">
+                        <input type="button" value="關閉" onclick="$('#popup_SentSuccess').hide();" class="btn_superbig br10 btn50 btn_gray">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 跳框-失敗 -->
+    <div id="popup_SentFail" class="popup_blackbg popup-fail" style="display: none;">
+        <div class="share_popupbox">
+            <!-- share_popup_s可以指定框的大小，最小s，中m，大l -->
+            <div class="share_popup_s">
+                <!-- 標題 -->
+                <div class="share_popup_header">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <span>警告</span>
+                    <div class="popup_close" onclick="$('#popup_SentFail').hide();">
+                        <i class="fa-solid fa-x"></i>
+                    </div>
+                </div>
+                <!-- 內容 -->
+                <div class="popup_sharebox bg_white">
+                    <div class="popup_share_title text_center">資訊有誤，請重新檢查後再送出。</div>
+                    <!-- 按鈕 -->
+                    <div class="btn_box ai_center jc_center">
+                        <input type="button" value="關閉" onclick="$('#popup_SentFail').hide();" class="btn_superbig br10 btn50 btn_gray">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,304 @@
+@charset "utf-8";
+/*********** 跳框-共用 ***********/
+.popup_blackbg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .4);
+    overflow: auto;
+    z-index: 20;
+}
+.popup_close {
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    text-align: center;
+    font: normal bold 20px/34px "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+    background-color: #777;
+    border: 3px solid #fff;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.share_popupbox {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    z-index: 20;
+}
+.share_popup_s,
+.share_popup_m,
+.share_popup_l {
+    margin: 0 auto;
+    background: #fff;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+}
+.share_popup_s {
+    width: 30%;
+    min-width: 500px;
+}
+.share_popup_m {
+    width: 40%;
+    min-width: 750px;
+}
+.share_popup_l {
+    width: 65%;
+    min-width: 1000px;
+}
+.share_popup_header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    padding: 25px;
+    color: #fff;
+    font: normal bold 1.5em/25px "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+    background-color: #49a9b5;
+    border: 5px solid #fff;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+.share_popup_header span {
+    margin-left: 5px;
+}
+.popup_sharebox {
+    color: #555;
+    padding: 20px;
+}
+.popup_share_title {
+    padding: 0 1.5em 1.5em 1.5em;
+    font: normal normal 1.2em/1.6em "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+}
+.popup_toptab {
+    display: flex;
+    font: normal normal 1rem/1rem "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+}
+.popup_tabname {
+    width: 110px;
+    padding: 20px;
+    color: #58839e;
+    text-align: center;
+    background: #e3f3fd;
+}
+.popup_tabname.selected {
+    color: #222;
+    background: #f2f9fe;
+}
+.popup_tabname:hover {
+    color: #444;
+}
+.popup_sharebox .scroll_box {
+    max-height: 400px;
+    margin: 0 auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.share_btnbox {
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #eaeaea;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+/*********** 深色模式 ***********/
+/* 共用-輸入框、下拉選擇框 */
+body.dark-theme .popup_sharebox .input20,
+body.dark-theme .popup_sharebox .input33,
+body.dark-theme .popup_sharebox .input50,
+body.dark-theme .popup_sharebox .input100,
+body.dark-theme .popup_sharebox .select33,
+body.dark-theme .popup_sharebox .select50,
+body.dark-theme .popup_sharebox .select100,
+body.dark-theme .popup_sharebox .textarea50,
+body.dark-theme .popup_sharebox .textarea100,
+body.dark-theme .popup_sharebox .input_no_width,
+body.dark-theme .popup_sharebox input.no_width,
+body.dark-theme .popup_sharebox select.no_width,
+body.dark-theme .popup_sharebox .col_date,
+body.dark-theme .popup_sharebox .col_date50,
+body.dark-theme .popup_sharebox .item_select {
+    color: #666;
+    background-color: #ededed;
+    border: 1px solid #d9d9d9;
+}
+
+/*********  以下為 各不同寬度螢幕_設定  *********/
+/* 寬度大於 1024px (iPad, iPad pro) */
+@media screen and (min-width: 1024px) {
+    /* 跳框-共用 */
+    .share_popupbox {
+        transform: translateY(-50%);
+    }
+}
+
+/* 寬度大於 1901px (電腦) */
+@media screen and (min-width: 1901px) {
+}
+
+/* 寬度介於 1441px - 1900px (ipad pro,舊電腦) */
+@media screen and (min-width: 1441px) and (max-width: 1900px) {
+}
+
+/* 寬度介於 1024px - 1300px (ipad) */
+@media screen and (min-width: 1024px) and (max-width: 1300px) {
+    /* 跳框-共用 */
+    .share_popup_s {
+        min-width: 450px;
+    }
+}
+
+/* 寬度小於 1023px (電腦) */
+@media screen and (max-width: 1023px) {
+    /* 跳框-共用 */
+    .share_popupbox {
+        top: 5%;
+    }
+    .share_popup_m {
+        min-width: 400px;
+    }
+    .share_popup_m {
+        min-width: 550px;
+    }
+    .share_popup_l {
+        min-width: 700px;
+    }
+    .popup_close {
+        width: 12px;
+        padding: 6px 7px 6px 8px;
+        font: normal bold 1rem/12px "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+    }
+    .share_popup_header {
+        height: 25px;
+    }
+    .popup_sharebox {
+        padding: 1.5rem;
+    }
+    .popup_share_title {
+        padding: 10px;
+        font: normal normal 1.1rem/1.3rem "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+    }
+}
+
+/* 寬度介於 901px - 1023px (電腦) */
+@media screen and (min-width: 901px) and (max-width: 1023px) {
+}
+
+/* 寬度小於 768px (手機) */
+@media (max-width: 768px) {
+}
+
+/* 寬度介於 751px - 900px (iPad, 手機橫放) */
+@media screen and (min-width: 751px) and (max-width: 900px) {
+}
+
+/* 寬度介於 671px - 750px (iPad, 手機橫放) */
+@media screen and (min-width: 671px) and (max-width: 750px) {
+    /* 跳框-共用 */
+    .share_popupbox {
+        top: 0;
+    }
+    .share_popup_s {
+        min-width: 480px;
+    }
+}
+
+/* 寬度介於 551px - 670px (手機橫放) */
+@media screen and (min-width: 551px) and (max-width: 670px) {
+    /* 跳框-共用 */
+    .share_popupbox {
+        top: 0;
+    }
+    .share_popup_s {
+        min-width: 480px;
+    }
+    .popup_sharebox {
+        padding: 1rem;
+    }
+}
+
+/* 寬度介於 401px - 550px (iPhone 6+) */
+@media screen and (min-width: 401px) and (max-width: 550px) {
+    /* 跳框-共用 */
+    .share_popup_s,
+    .share_popup_m,
+    .share_popup_l {
+        min-width: 390px;
+    }
+    .share_popup_header {
+        font: normal bold 1.4rem/1.4rem "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+    }
+    .popup_sharebox {
+        padding: 1rem;
+    }
+}
+
+/* 寬度介於 480px - 500px */
+@media screen and (min-width: 480px) and (max-width: 500px) {
+    /* 跳框-共用 */
+    .share_popup_s,
+    .share_popup_m,
+    .share_popup_l {
+        min-width: 450px;
+    }
+}
+
+/* 寬度介於 401px - 414px (iPhone 5,iPhone 6,Galaxy S5) */
+@media screen and (min-width: 401px) and (max-width: 414px) {
+}
+
+/* 寬度介於 321px - 400px (iPhone 5,iPhone 6,Galaxy S5) */
+@media screen and (min-width: 321px) and (max-width: 400px) {
+    /* 跳框-共用 */
+    .share_popup_s,
+    .share_popup_m,
+    .share_popup_l {
+        width: 95%;
+        min-width: 300px;
+    }
+}
+
+/* 寬度小於 320px */
+@media screen and (max-width: 320px) {
+    /* 跳框-共用 */
+    .share_popup_s,
+    .share_popup_m,
+    .share_popup_l {
+        min-width: 290px;
+    }
+    .share_popup_header {
+        font: normal bold 1.4rem/1.4rem "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+    }
+    .popup_sharebox {
+        padding: 1rem;
+    }
+    .popup_share_title {
+        padding: 5px;
+        font: normal normal 1rem/1.2rem "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+    }
+}
+
+/* 寬度小於 280px */
+@media screen and (max-width: 280px) {
+}
+
+/* 寬度小於 240px */
+@media screen and (max-width: 240px) {
+    /* 跳框-共用 */
+    .share_popup_s,
+    .share_popup_m,
+    .share_popup_l {
+        min-width: 220px;
+    }
+}

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" /> <!-- 允許使用者用雙指縮放畫面 -->
+    <meta name="format-detection" content="telephone=no, email=no" /> <!-- 禁止數字識別為電話或email -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/reset.css?date=20250715" type="text/css" />
+    <!-- 共用樣式 css -->
+    <link rel="stylesheet" href="css/share.css?date=20250715" type="text/css" />
+    <!-- 所有樣式 css -->
+    <link rel="stylesheet" href="css/new_style.css?date=20250715" type="text/css" />
+    <!-- 跳框 css -->
+    <link rel="stylesheet" href="css/popup.css?date=20250715" type="text/css" />
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- JQuery共用檔(有用JQuery必先讀這支，如跳框) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js?date=20250715"></script>
+    <!-- JS(所有頁面共用) -->
+    <script src="js/new_all.js?date=20250715" defer></script>
+    <title>好位子 | 文章</title>
+</head>
+<body>
+    <!-- 遮罩層：點擊時可關閉手機版側邊欄 -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- 回到頂端 -->
+    <div class="go_top">
+        <img src="images/go_top.png?date=20250715" alt="">
+    </div>
+
+    <!-- 左側欄位 -->
+    <nav id="sidebar" class="sidebar_box">
+        <!-- 選單列滑出效果 -->
+        <ul id="inside" class="inside">
+            <li class="sidebar_list">
+                <img id="sidebarLogo" src="images/index/logo_white.png?date=20250715"
+                    onclick="window.open('index.html','_self');" class="sidebar_logo">
+            </li>
+            <li class="sidebar_list">
+                <div class="link" onclick="window.open('index.html','_self');">
+                    <div class="link_left">
+                        <img src="images/index/sidebar_icon1.png?date=20250715" alt="" class="sidebar_pic">
+                        <div>首頁</div>
+                    </div>
+                </div>
+            </li>
+            <li class="sidebar_list">
+                <div class="link">
+                    <div class="link_left">
+                        <img src="images/index/sidebar_icon2.png?date=20250715" alt="" class="sidebar_pic">
+                        <div>勞動部課程</div>
+                    </div>
+                    <i class="fa-solid fa-caret-down arrow-icon"></i>
+                </div>
+                <ul class="submenu">
+                    <li><a href="class1_1.html" class="submenu_item">第01課：自我介紹</a></li>
+                </ul>
+            </li>
+            <li class="sidebar_list">
+                <div class="link">
+                    <div class="link_left">
+                        <img src="images/index/sidebar_icon3.png?date=20250715" alt="" class="sidebar_pic">
+                        <div>外籍照護技巧</div>
+                    </div>
+                    <i class="fa-solid fa-caret-down arrow-icon"></i>
+                </div>
+                <ul class="submenu">
+                    <li><a href="class2_1.html" class="submenu_item">測量生命徵象</a></li>
+                </ul>
+            </li>
+            <li class="sidebar_list">
+                <div class="link">
+                    <div class="link_left">
+                        <img src="images/index/sidebar_icon4.png?date=20250715" alt="" class="sidebar_pic">
+                        <div>國際外勞、移工教育訓練課程</div>
+                    </div>
+                    <i class="fa-solid fa-caret-down arrow-icon"></i>
+                </div>
+                <ul class="submenu">
+                    <li><a href="class3_1.html" class="submenu_item">幫助外籍移工快速適應工作環境</a></li>
+                </ul>
+            </li>
+            <li class="sidebar_list">
+                <div class="link">
+                    <div class="link_left">
+                        <img src="images/index/sidebar_icon5.png?date=20250715" alt="" class="sidebar_pic">
+                        <div>會員專區</div>
+                    </div>
+                    <i class="fa-solid fa-caret-down arrow-icon"></i>
+                </div>
+                <ul class="submenu">
+                    <li><a href="member_info.html" class="submenu_item">個人檔案</a></li>
+                    <li><a href="favorites.html" class="submenu_item">我的最愛</a></li>
+                </ul>
+            </li>
+            <li class="sidebar_list">
+                <div class="link" onclick="window.open('index.html','_self');">
+                    <div class="link_left">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <div>登出</div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- 右側欄位 -->
+    <div class="main-content" id="mainContent">
+        <!-- 上方導覽列 -->
+        <div class="navbar_box">
+            <div class="header">
+                <!-- 漢堡圖(開啟左側欄位) -->
+                <button id="toggleBtn" aria-label="切換側邊欄" class="toggle-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <!-- 網站標題 -->
+                <div class="logo_title">
+                    <span>好位子語言學習</span>
+                </div>
+            </div>
+            <div class="navbar">
+                <!-- 電腦版_資訊列(當切換成手機版螢幕，則隱藏) -->
+                <ul class="nav_pc">
+                    <!-- 語系 -->
+                    <li class="navbar_list nav_lang">
+                        <i class="fa-solid fa-earth-americas"></i>
+                        <select class="language-select">
+                            <option value="zh">繁體中文</option>
+                            <option value="en">English</option>
+                            <option value="id">Bahasa Indonesia</option>
+                        </select>
+                    </li>
+                    <!-- 用戶名 -->
+                    <li class="navbar_list nav_user">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <div id="UserName" class="user_name">Alice54321</div>
+                    </li>
+                    <!-- 登入/註冊 -->
+                    <li class="navbar_list nav_login">
+                        <i class="fa-solid fa-user"></i>
+                        <div class="navbar_text" onclick="window.open('login.html','_self');">登入/註冊</div>
+                    </li>
+                    <!-- 登出 -->
+                    <li class="navbar_list nav_logout" style="display: none;">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <div class="navbar_text" onclick="window.open('index.html','_self');">登出</div>
+                    </li>
+                </ul>
+                <!-- 切換版色 -->
+                <div class="color_change">
+                    <div id="themeToggle" class="theme-toggle">
+                        <i id="themeIcon" class="fa-solid fa-moon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 手機版_按鈕，按下去則會出現下方的資訊列 -->
+        <button id="navBtnToggle" class="navbar_toggle">
+            <i class="fa-solid fa-up-down"></i>
+        </button>
+        <!-- 手機版_資訊列 -->
+        <ul class="navbar nav_mobile">
+            <!-- 語系 -->
+            <li class="navbar_list nav_lang">
+                <i class="fa-solid fa-earth-americas"></i>
+                <select class="language-select">
+                    <option value="zh">繁體中文</option>
+                    <option value="en">English</option>
+                    <option value="id">Bahasa Indonesia</option>
+                </select>
+            </li>
+            <!-- 用戶名 -->
+            <li class="navbar_list nav_user">
+                <i class="fa-solid fa-circle-user"></i>
+                <div id="UserName" class="user_name">Alice54321</div>
+            </li>
+            <!-- 登入/註冊 -->
+            <li class="navbar_list nav_login">
+                <i class="fa-solid fa-user"></i>
+                <div class="navbar_text" onclick="window.open('login.html','_self');">登入/註冊</div>
+            </li>
+            <!-- 登出 -->
+            <li class="navbar_list nav_logout" style="display: none;">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <div class="navbar_text" onclick="window.open('index.html','_self');">登出</div>
+            </li>
+        </ul>
+
+        <!-- 下方內容 -->
+        <div class="content_area">
+            <!-- 麵包屑 -->
+            <div class="breadcrumb_box">
+                <ul class="breadcrumb">
+                    <li><a href="index.html">首頁</a></li>
+                    <li><a href="class1_1.html">勞動部課程</a></li>
+                    <li>第01課：自我介紹</li>
+                </ul>
+            </div>
+
+            <!-- 課程 -->
+            <div class="boxset">
+                <!-- 標題 -->
+                <div class="box_title">
+                    <span>第01課：自我介紹</span>
+                </div>
+
+                <!-- 內容 -->
+                <div class="box_inside word_inside">
+                    <div class="share_container_m">
+                        <!-- 頁籤 -->
+                        <div class="flex_tabbox br10">
+                            <a href="class1_1a.html" target="_self" class="share_tab">
+                                <i class="fa-solid fa-clipboard-list"></i>
+                                <span>單詞</span>
+                            </a>
+                            <a href="class1_1b.html" target="_self" class="share_tab">
+                                <i class="fa-solid fa-rectangle-list"></i>
+                                <span>句子</span>
+                            </a>
+                            <a href="class1_1c.html" target="_self" class="share_tab selected">
+                                <i class="fa-solid fa-book"></i>
+                                <span>文章</span>
+                            </a>
+                        </div>
+                        <!-- 內容(文章) -->
+                        <div class="share_info word_info br10">
+                            <!-- 自動播放功能按鈕 -->
+                            <ul class="playerbox">
+                                <li class="play_pages_function">
+                                    <button class="play_btn">
+                                        <i class="fa-solid fa-play"></i>
+                                        <div class="play_text">自動播放</div>
+                                    </button>
+                                    <button class="play_btn">
+                                        <i class="fa-solid fa-repeat"></i>
+                                        <div class="play_text">重複播放</div>
+                                    </button>
+                                </li>
+                                <li class="play_pages_btn">
+                                    <input type="submit" value="上一頁" class="btn_small br10 btn_gray">
+                                    <span class="play_pages_number">1/10</span>
+                                    <input type="submit" value="下一頁" class="btn_small br10 btn_blue">
+                                </li>
+                            </ul>
+
+                            <div class="class_theme">
+                                <!-- 條列3 -->
+                                <ul class="theme_list article br5">
+                                    <li class="col_1">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="talk_text">用物準備： (1) 血糖機、(2) 試紙片、(3) 採血筆、(4) 採血針、(5) 酒精棉片、(6) 針頭收集桶 步驟： (1) 血糖機開機後取出試紙片並插入血糖機；採血筆裝上採血針，調整到適當刻度。 (2) 選擇手指末端外側，每次需輪換不同部位採血；用大拇指輕柔使其充血並暫時壓住。 (3) 用酒精棉片消毒採血部位，待乾後再採血，以免影響血糖值；採血筆貼緊採血部位，扎針後擠出適量血量滴入試紙，待數據顯示後記錄數據。 (4) 依據處方給予降血糖藥物或胰島素。 注意事項： (1) 每天至少餐前測試一次，若發現血糖不穩則依狀況增加測量次數。 (2) 試紙片須放置常溫且乾燥處；避免感染，採血針僅能單次使用，採血針使用完畢須放到針頭收集桶，約8分滿左右拿至醫療院所回收。 (3) 採血時若血量不足，請勿硬擠，更換試紙片後再重新採血。 (4) 血糖值正常數據：  1、正常人：飯前空腹8小時應低於100mg/dl；飯後2小時則應低於140mg/dl。  2、糖尿病患者：三餐空腹血糖應控制80-120mg/dl，為避免半夜低血糖，睡前應控制100-140mg/dl。 (5) 當受測者有飢餓感、四肢發抖、心悸、臉色蒼白、冒冷汗、頭痛、頭暈、易怒、虛弱、疲倦、口齒不清、精神恍惚、注意力不集中、行為反常、意識喪失等，先給含糖果汁；若無及時發現而發生意識不清的狀況，務必告知家屬後立即送醫。</div>
+                                        </button>
+                                    </li>
+                                    <li class="col_1">
+                                        <button class="sound_btn">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <div class="talk_text">Persiapan alat: (1) Glukometer, (2) Strip (3) Lancet pen, (4) Jarum pengambil darah, (5) Kapas alcohol, (6) tong jarum bekas Langkah-langkah: (1) Nyalakan glukometer lalu keluarkan strip dan masukkan ke glukometer; pasang jarum ke lancet , sesuaikan ke skala yang tepat. (2) Pilih sisi luar ujung jari, setiap kali mengambil darah harus bergantian di bagian yang berbeda; gunakan ibu jari untuk memerah dan tekan sementara. (3) Bersihkan area dengan kapas alcohol tunggu hingga kering sebelum menusuk, untuk menghindari pengaruhnya pada hasil gula darah; tempelkan lancet dengan erat pada area tersebut, setelah menusuk, keluarkan darah secukupnya dan teteskan pada strip , tunggu hingga angka hasil ditampilkan, lalu catat hasilnya. (4) Berikan obat penurun gula darah atau insulin sesuai resep. Catatan: (1) Test setidaknya sekali sehari sebelum makan, jika gula darah tidak stabil, tambah frekuensi pengukuran sesuai dengan kondisi. (2) Strip harus disimpan di tempat dengan suhu Normal dan kering; untuk mencegah infeksi, jarum pengambil darah hanya boleh digunakan sekali pakai. Setelah digunakan, jarum pengambil darah harus dibuang ke dalam tong khusus jarum bekas, dan ketika sudah terisi sekitar 80% penuh, bawa ke fasilitas kesehatan untuk didaur ulang. (3) Jika darah yang keluar tidak cukup saat mengambil darah, jangan dipaksakan, Ganti tes strip baru lalu ambil darah lagi. (4) Angka normal gula darah: 1. Orang normal: sebelum makan dengan perut kosong selama 8 jam harus di bawah 100mg/dl; 2 jam setelah makan harus di bawah 140mg/dl. 2. Penderita diabetes: gula darah puasa tiga kali makan harus dikontrol antara 80-120mg/dl, untuk mencegah hipoglikemia di malam hari, harus dikontrol antara 100-140mg/dl sebelum tidur. (5) Jika pasien mengalami rasa lapar, tangan dan kaki gemetar, jantung berdebar-debar, wajah pucat, berkeringat dingin, sakit kepala, pusing, mudah marah, lemas, lelah, bicara tidak jelas, linglung, sulit berkonsentrasi, perilaku aneh, kehilangan kesadaran, dll., segera berikan jus manis. Jika tidak segera diketahui dan terjadi penurunan kesadaran, segera beri tahu keluarga dan bawa ke rumah sakit.</div>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
