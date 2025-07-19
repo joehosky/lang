@@ -57,49 +57,72 @@ textarea {
     border: none;
     cursor: pointer;
 }
-table {
-    width: 100%;
-    border-spacing: 0;
-    border-collapse: collapse;
-}
 button:focus,
 input:focus,
 select:focus,
 textarea:focus {
     outline: none;
 }
+input,
+select,
+textarea {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
 select {
     background-repeat: no-repeat;
-    background-position: right 0.7em center;
-    background-size: 0.65em auto;
+    background-position: right .7rem center;
+    background-size: .65rem auto;
 }
-/*Input 的 Placeholder 設定*/
+table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+/* 表格內的ScrollBar樣式設定 */
+::-webkit-scrollbar {
+    width: 6px;
+}
+/* Input 的 Placeholder 設定 */
 ::-webkit-input-placeholder { /* WebKit browsers:Chrome, Safari */
     color: #ccc;
-    font-size: 1em;
+    font-size: 1rem;
     font-weight: normal;
 }
-:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+::-moz-placeholder { /* Mozilla Firefox 4 to 18 */
     color: #ccc;
-    font-size: 1em;
+    font-size: 1rem;
     font-weight: normal;
 }
 ::-moz-placeholder { /* Mozilla Firefox 19+ */
     color: #ccc;
-    font-size: 1em;
+    font-size: 1rem;
     font-weight: normal;
 }
 ::-ms-input-placeholder { /* IE 10+ */
     color: #ccc;
-    font-size: 1em;
+    font-size: 1rem;
     font-weight: normal;
 }
 ::placeholder { /* CSS 3 標準 */
     color: #ccc;
 }
-/* 表格內的ScrollBar樣式設定 */
-::-webkit-scrollbar {
-    width: 6px;
+/* 深色模式 */
+html.dark-theme ::-webkit-input-placeholder {
+    color: #777;
+}
+html.dark-theme ::-moz-placeholder {
+    color: #777;
+}
+html.dark-theme ::-moz-placeholder {
+    color: #777;
+}
+html.dark-theme ::-ms-input-placeholder {
+    color: #777;
+}
+html.dark-theme ::placeholder {
+    color: #777;
 }
 
 /*********  以下為 手機畫面_設定  *********/

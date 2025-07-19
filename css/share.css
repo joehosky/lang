@@ -5,8 +5,8 @@ body {
     height: 100vh;
     margin: 0;
     color: #222;
-    background: #fafafa;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    background: #ddd;
+    transition: background-color 1s ease, color 1s ease;
     overflow-x: hidden;
 }
 a {
@@ -123,102 +123,6 @@ a:focus-within {
 .flex_column {
     flex-direction: column;
 }
-/*********** 共用-輸入框input ***********/
-input[type="text"],
-input[type="number"],
-input[type="button"],
-input[type="submit"] {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-}
-.input20,
-.input33,
-.input50,
-.input100,
-.select33,
-.select50,
-.select100,
-.textarea50,
-.textarea100,
-select.no_width {
-    display: flex;
-    flex-direction: row;
-    width: calc(100% - 12px);
-    padding: 5px;
-    color: #555;
-    font: normal normal 1rem/1rem "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    vertical-align: middle;
-}
-.input100 {
-    width: calc(100% - 15px);
-}
-.input50 {
-    width: calc(100% / 2 - 16px);
-}
-.input33 {
-    width: calc(100% / 3 - 15px);
-}
-.input_no_width,
-input.no_width {
-    display: inline-block;
-    padding: 5px;
-    color: #555;
-    font: normal normal 1rem/1rem "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    vertical-align: middle;
-}
-/*********** 共用-下拉選擇框select ***********/
-.select100 {
-    width: 100%;
-}
-.select50 {
-    width: calc(100% / 2 - 5px);
-}
-.select33 {
-    width: calc(100% / 3 - 5px);
-}
-select.no_width {
-    width: auto;
-    padding: 3px 20px 3px 5px;
-}
-/*********** 共用-多文字輸入框 ***********/
-.textarea {
-    width: 97%;
-    height: 5rem;
-    margin: 0 auto;
-    padding: .5rem;
-    color: #555;
-    font: normal normal 1rem/1rem "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    outline: none;
-    resize: none;
-}
-.textarea50,
-.textarea100 {
-    width: 97%;
-    min-height: 100px;
-    padding: 5px 10px;
-    margin: 0 0 10px 0;
-    font: normal normal 15px/21px "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
-    resize: none;
-}
-.textarea50 {
-    width: calc(100% / 2 - 22px);
-}
-/*********** 共用-radio、checkbox ***********/
-input[type="radio"] {
-    width: 1.2rem;
-    height: 1.2rem;
-    margin: 0 2px 0 0;
-    border: 0;
-    vertical-align: middle;
-    cursor: pointer;
-}
 /*********** 共用-按鈕 ***********/
 button,
 input[type="button"],
@@ -259,7 +163,7 @@ button.btn_small,
 a.btn_small {
     padding: .1rem .5rem;
     margin: 0 .2rem;
-    font: normal normal .9rem/1.1rem "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+    font: normal normal .9rem/1rem "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
 }
 input.btn_big,
 button.btn_big,
@@ -824,7 +728,7 @@ br {
 }
 hr {
     width: 100%;
-    margin: 1.3em 0;
+    margin: 1.3rem 0;
     border: 1px dashed #ccc;
 }
 /*********** 共用元件(單行、多行省略) ***********/
@@ -869,7 +773,7 @@ hr {
 .share_eyes {
     position: absolute;
     top: 5px;
-    right: 20px;
+    right: 5px;
 }
 i.fa-eye,
 i.fa-eye-slash {
@@ -1033,15 +937,11 @@ i.fa-eye-slash {
     margin: 1rem;
     font: normal bold 1rem/1rem "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
 }
-.col_inline {
-    display: inline-block;
-    margin-right: 10px;
-    font: normal normal 1rem/1rem "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
-}
+.col_inline,
 .col_radio,
 .col_checkbox {
     display: inline-block;
-    margin-right: 10px;
+    margin: 0 0 0 10px;
     font: normal normal 1rem/1rem "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
 }
 .col_radio label,
@@ -1050,11 +950,21 @@ i.fa-eye-slash {
     vertical-align: middle;
     cursor: pointer;
 }
+.btn_box {
+    display: flex;
+    width: 100%;
+    margin: 0 auto 15px;
+    padding: 15px 0 0 0;
+}
+.item_title i,
+.btn_box input {
+    margin-right: 5px;
+}
 .item_title i:last-of-type,
 .col_radio:last-of-type,
 .col_checkbox:last-of-type,
 .btn_box input:last-of-type {
-    margin-right: 0;
+    margin: 0;
 }
 .col_title,
 .col_item {
@@ -1082,6 +992,151 @@ i.fa-eye-slash {
     background-color: #fff;
     border: 1px solid #ddd;
     vertical-align: middle;
+}
+.col_checkbox a {
+    display: inline-block;
+}
+.col_btn {
+    width: 50%;
+    margin: 20px auto;
+    text-align: center;
+}
+.check_set {
+    padding: 0 0 0 10px;
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+.ckbox_set {
+    display: inline-block;
+    min-width: 100px;
+    vertical-align: middle;
+}
+.check_box,
+.radio_inline input[type="radio"] {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.check_box {
+    font-size: 15px;
+    padding-bottom: 10px;
+}
+.chkbox_outside {
+    width: 100%;
+    margin: 0 auto 10px;
+    padding: 15px;
+    text-align: left;
+    background: #f3f3f3;
+}
+.chkbox_inside,
+.detail_inside {
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.pw_tips {
+    list-style: inside;
+    font: normal normal 14px/16px "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+}
+/*********** 共用-輸入框input ***********/
+input[type="text"],
+input[type="number"],
+input[type="button"],
+input[type="submit"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.input33,
+.input50,
+.input100,
+.select33,
+.select50,
+.select100,
+.textarea50,
+.textarea100,
+select.no_width {
+    display: flex;
+    flex-direction: row;
+    width: calc(100% - 12px);
+    padding: 5px;
+    color: #555;
+    font: normal normal 1rem/1rem "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    vertical-align: middle;
+}
+.input100 {
+    width: calc(100% - 15px);
+}
+.input50 {
+    width: calc(100% / 2 - 16px);
+}
+.input33 {
+    width: calc(100% / 3 - 15px);
+}
+.input_no_width,
+input.no_width {
+    display: inline-block;
+    padding: 5px;
+    color: #555;
+    font: normal normal 1rem/1rem "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    vertical-align: middle;
+}
+/*********** 共用-下拉選擇框select ***********/
+.select100 {
+    width: 100%;
+}
+.select50 {
+    width: calc(100% / 2 - 5px);
+}
+.select33 {
+    width: calc(100% / 3 - 5px);
+}
+select.no_width {
+    width: auto;
+    padding: 3px 20px 3px 5px;
+}
+/*********** 共用-多文字輸入框 ***********/
+.textarea {
+    width: 97%;
+    height: 5rem;
+    margin: 0 auto;
+    padding: .5rem;
+    color: #555;
+    font: normal normal 1rem/1rem "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    outline: none;
+    resize: none;
+}
+.textarea50,
+.textarea100 {
+    width: 97%;
+    min-height: 100px;
+    padding: 5px 10px;
+    margin: 0 0 10px 0;
+    font: normal normal 15px/21px "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+    resize: none;
+}
+.textarea50 {
+    width: calc(100% / 2 - 22px);
+}
+/*********** 共用-radio、checkbox ***********/
+input[type="radio"] {
+    width: 1.2rem;
+    height: 1.2rem;
+    margin: 0 2px 0 0;
+    border: 0;
+    vertical-align: middle;
+    cursor: pointer;
 }
 /*********** 共用_麵包屑 ***********/
 .breadcrumb_box {
@@ -1133,7 +1188,7 @@ i.fa-eye-slash {
     width: calc(100% - 20px);
     padding: 10px;
     font: normal bold 1rem/1rem "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
-    border-bottom: 1px solid #ececec;
+    /* border-bottom: 1px solid #ececec; */
     cursor: pointer;
 }
 .share_tab:last-of-type {
@@ -1175,7 +1230,7 @@ i.fa-eye-slash {
     margin: 20px auto;
     padding: 10px;
     text-align: center;
-    border: 5px dotted #edeff4;
+    border: 5px dotted #e6e6e6;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
@@ -1218,22 +1273,21 @@ i.fa-eye-slash {
     border-radius: 5px 5px 0 0;
     cursor: pointer;
 }
-.table_tab:hover, .table_tab:active, .table_tab:focus {
+.table_tab:hover,
+.table_tab:active,
+.table_tab:focus {
     background: #fff7d6;
     border: 1px solid #ddd;
 }
-.chkbox_outside {
-    width: 100%;
-    margin: 0 auto 10px;
-    padding: 15px;
-    text-align: left;
-    background: #f3f3f3;
-}
 .pw_tips {
     list-style: inside;
-    font: normal normal 14px/16px "Century Gothic", Arial, "Microsoft JhengHei", PMingLiU, sans-serif;
+    font: normal normal 14px/16px "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
 }
 /*********** 共用-切換版色 ***********/
+.color_change {
+    display: inline-block;
+    margin: 0 5px;
+}
 .toggle-btn {
     display: flex;
     align-items: center;
@@ -1271,7 +1325,7 @@ i.fa-eye-slash {
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%;
-    transition: background-color 0.3s ease;
+    transition: background-color 1s ease, color 1s ease;
     cursor: pointer;
 }
 .theme-toggle:hover {
@@ -1293,10 +1347,9 @@ i.fa-eye-slash {
     width: 45px;
     height: 45px;
     transition: opacity 0.3s ease;
-    pointer-events: none;
-    /* 預設不能點，避免透明但可點 */
     cursor: pointer;
-    opacity: 0;
+    opacity: 0; /* 讓按鈕一開始隱藏，不干擾操作 */
+    pointer-events: none; /* 預設不能點，避免透明但可點 */
     z-index: 999;
 }
 .go_top img {
@@ -1304,88 +1357,88 @@ i.fa-eye-slash {
 }
 /*********** 深色模式 ***********/
 /* 共用樣式 */
-body.dark-theme {
+html.dark-theme {
     color: #eee;
     background: #222;
 }
-.body.dark-theme a {
+.html.dark-theme a {
     color: #49bed7;
 }
 /* 共用元件(文字) */
-.body.dark-theme .boxset hr {
+.html.dark-theme .boxset hr {
     border: 1px dashed #777;
 }
 /* 共用-輸入框、下拉選擇框 */
-body.dark-theme .input20,
-body.dark-theme .input33,
-body.dark-theme .input50,
-body.dark-theme .input100,
-body.dark-theme .select33,
-body.dark-theme .select50,
-body.dark-theme .select100,
-body.dark-theme .textarea50,
-body.dark-theme .textarea100,
-body.dark-theme .input_no_width,
-body.dark-theme input.no_width,
-body.dark-theme select.no_width,
-body.dark-theme .col_date,
-body.dark-theme .col_date50,
-body.dark-theme .item_select {
+html.dark-theme .input20,
+html.dark-theme .input33,
+html.dark-theme .input50,
+html.dark-theme .input100,
+html.dark-theme .select33,
+html.dark-theme .select50,
+html.dark-theme .select100,
+html.dark-theme .textarea50,
+html.dark-theme .textarea100,
+html.dark-theme .input_no_width,
+html.dark-theme input.no_width,
+html.dark-theme select.no_width,
+html.dark-theme .col_date,
+html.dark-theme .col_date50,
+html.dark-theme .item_select {
     color: #ccc;
     background-color: #333;
     border: 1px solid #555;
 }
 /* 切換版色 */
-body.dark-theme .theme-toggle {
+html.dark-theme .theme-toggle {
     color: #ddd;
     background-color: #418a8a;
     border-color: #777;
 }
-body.dark-theme .theme-toggle:hover {
+html.dark-theme .theme-toggle:hover {
     background-color: #666;
 }
-body.dark-theme .toggle-btn {
+html.dark-theme .toggle-btn {
     color: #ddd;
     background: #555;
     border-color: #666;
 }
-body.dark-theme button.toggle-btn:hover,
-body.dark-theme button.toggle-btn:active {
+html.dark-theme button.toggle-btn:hover,
+html.dark-theme button.toggle-btn:active {
     color: #9bc4c4;
     background: #3d6d74;
     border-color: #428c8c;
 }
 /* 共用按鈕顏色 */
-body.dark-theme input.btn_yellow,
-body.dark-theme a.btn_yellow {
+html.dark-theme input.btn_yellow,
+html.dark-theme a.btn_yellow {
     background: #ffa31f;
     border: 1px solid #ffa31f;
 }
 /* 共用文字顏色 */
-body.dark-theme .text_red {
+html.dark-theme .text_red {
     color: #ff6d6d;
 }
 /* 共用-麵包屑 */
-body.dark-theme .breadcrumb_box {
+html.dark-theme .breadcrumb_box {
     color: #fff;
     background: #444;
 }
 /* 共用-假頁籤 */
-body.dark-theme .flex_tabbox {
+html.dark-theme .flex_tabbox {
     border: 5px solid #949494;
 }
-body.dark-theme .share_info {
+html.dark-theme .share_info {
     background: #444;
     border: 5px dotted #949494;
 }
 /* 共用-假頁籤下方內容 */
-body.dark-theme .boxinside_title {
+html.dark-theme .boxinside_title {
     border-bottom: 4px solid #949494;
 }
-body.dark-theme .chkbox_outside {
+html.dark-theme .chkbox_outside {
     background: #636363;
 }
-body.dark-theme .share_tipbox {
+html.dark-theme .share_tipbox {
     background-color: #454545;
 }
 
@@ -1419,10 +1472,20 @@ body.dark-theme .share_tipbox {
 }
 
 /* 寬度大於 1901px (電腦) */
-@media screen and (min-width: 1901px) {}
+@media screen and (min-width: 1901px) {
+}
+
+/* 寬度大於 1300px (電腦) */
+@media screen and (min-width: 1300px) {
+    /* 共用元件(眼睛) */
+    .share_eyes {
+        right: 25px;
+    }
+}
 
 /* 寬度介於 1441px - 1900px (ipad pro,舊電腦) */
-@media screen and (min-width: 1441px) and (max-width: 1900px) {}
+@media screen and (min-width: 1441px) and (max-width: 1900px) {
+}
 
 /* 寬度介於 1024px - 1300px (ipad) */
 @media screen and (min-width: 1024px) and (max-width: 1300px) {
@@ -1432,6 +1495,52 @@ body.dark-theme .share_tipbox {
     .share_container_m,
     .share_container_l {
         width: 96%;
+    }
+    /* 共用元件(文字) */
+    hr {
+        margin: .5rem 0;
+    }
+    /* 共用元件(按鈕) */
+    input.btn_superbig,
+    button.btn_superbig,
+    a.btn_superbig {
+        padding: 7px 10px;
+    }
+    /* 共用欄位 */
+    .col_title {
+        width: 35%;
+    }
+    .col_item {
+        width: calc(100% - 35%);
+    }
+    .col_inline,
+    .col_radio,
+    .col_checkbox {
+        margin: 0;
+        font: normal normal .95rem/1rem "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+    }
+    .check_box {
+        width: 18px;
+        height: 18px;
+        font-size: 15px;
+        padding-bottom: 0;
+    }
+    /* 共用-輸入框input */
+    .input33,
+    .input50,
+    .input100,
+    .select33,
+    .select50,
+    .select100,
+    .textarea50,
+    .textarea100,
+    select.no_width {
+        font: normal normal .95rem/.95rem "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+    }
+    .input100,
+    .select100,
+    .textarea100 {
+        width: 100%;
     }
 }
 
@@ -1449,19 +1558,19 @@ body.dark-theme .share_tipbox {
     /* 共用元件(按鈕) */
     input.btn_small,
     a.btn_small {
-        padding: 2px 5px;
+        padding: 2px 8px;
         margin: 0 5px;
     }
     input.btn_big,
     a.btn_big {
-        padding: 5px;
-        font: normal normal 1rem/1.3rem "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+        padding: 3px 10px;
+        font: normal normal 1rem/1rem "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
     }
     input.btn_superbig,
     a.btn_superbig {
-        padding: 10px;
+        padding: 5px 10px;
         margin: 0 5px;
-        font: normal normal 1.2rem/1.4rem "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+        font: normal normal 1.2rem/1.2rem "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
     }
     /* 共用圓角 */
     .br10 {
@@ -1489,6 +1598,58 @@ body.dark-theme .share_tipbox {
         -moz-border-radius: 25px;
         border-radius: 25px;
     }
+    /* 共用元件(文字) */
+    hr {
+        margin: .5rem 0;
+    }
+    /* 共用-備註、提示 */
+    .share_tipbox {
+        width: calc(100% - 10px);
+        margin: 5px auto;
+        padding: 10px 5px;
+        background-color: #e7e7e7;
+    }
+    /* 共用欄位 */
+    .col_title {
+        width: 35%;
+    }
+    .col_item {
+        width: calc(100% - 35%);
+    }
+    .col_inline,
+    .col_radio,
+    .col_checkbox {
+        margin: 0;
+        font: normal normal .95rem/1rem "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+    }
+    .check_box {
+        width: 18px;
+        height: 18px;
+        font-size: 15px;
+        padding-bottom: 0;
+    }
+    /* 共用-輸入框input */
+    .input_no_width,
+    input.no_width {
+        padding: 3px;
+        font: normal normal .9rem/.9rem "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+    }
+    .input33,
+    .input50,
+    .input100,
+    .select33,
+    .select50,
+    .select100,
+    .textarea50,
+    .textarea100,
+    select.no_width {
+        font: normal normal .95rem/.95rem "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+    }
+    .input100,
+    .select100,
+    .textarea100 {
+        width: 100%;
+    }
 }
 
 /* 寬度介於 901px - 1023px (電腦) */
@@ -1511,6 +1672,38 @@ body.dark-theme .share_tipbox {
     input.btn50, button.btn50, a.btn50 {
         width: 90%;
     }
+    .input100 {
+        width: 100%;
+    }
+    /* 共用-假頁籤下方內容 */
+    .chkbox_outside {
+        padding: 5px;
+    }
+    .share_inner {
+        padding: 0;
+    }
+    .textarea100 {
+        width: 100%;
+        padding: 5px;
+    }
+    /* 共用欄位  */
+    .col_title {
+        width: 100%;
+        margin: 0 0 5px 0;
+    }
+    .col_item {
+        width: 100%;
+    }
+    /* 共用-輸入框input */
+    .input_no_width,
+    input.no_width {
+        width: 65%;
+        margin: 0 0 5px 0;
+    }
+    /* 共用元件(眼睛) */
+    .share_eyes {
+        right: 7px;
+    }
 }
 
 /* 寬度介於 751px - 900px (iPad, 手機橫放) */
@@ -1528,6 +1721,7 @@ body.dark-theme .share_tipbox {
     .share_container_l {
         width: 98%;
     }
+    /* 共用寬度設定 */
     .col_2 {
         width: calc(100% - 2%);
         padding: .2rem .2rem .5rem .2rem;
@@ -1543,6 +1737,7 @@ body.dark-theme .share_tipbox {
     .share_container_l {
         width: 96%;
     }
+    /* 共用寬度設定 */
     .col_2 {
         width: calc(100% - 2%);
         padding: .2rem .2rem .5rem .2rem;
@@ -1558,20 +1753,131 @@ body.dark-theme .share_tipbox {
     .share_container_l {
         width: 96%;
     }
+    /* 共用寬度設定 */
+    .col_2 {
+        width: calc(100% - 2%);
+        padding: 3px;
+        margin: 3px;
+    }
+    /* 共用-按鈕 */
     input.btn33,
     button.btn33,
     a.btn33 {
         width: 100%;
-    }
-    .col_2 {
-        width: calc(100% - 2%);
-        padding: .2rem .2rem .5rem .2rem;
     }
 
 }
 
 /* 寬度介於 321px - 400px (iPhone 5,iPhone 6,Galaxy S5) */
 @media screen and (min-width: 321px) and (max-width: 400px) {
+    /* 共用欄位 */
+    .col_table {
+        min-width: 1200px;
+    }
+    .col50_right {
+        float: left;
+    }
+    .col_inline,
+    .radio_inline {
+        display: block;
+        margin: 0 10px 10px 0;
+    }
+    .col_inline .title,
+    .ckbox_set {
+        display: block;
+        margin: 0 0 5px 0;
+    }
+    .chkbox_outside {
+        width: calc(100% - 22px);
+        padding: 10px;
+    }
+    .col_inline,
+    .col_radio,
+    .col_checkbox {
+        margin: 5px 10px 0 0;
+        font: normal normal 14px/16px "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+    }
+    .col_title {
+        width: 98%;
+        margin: 0 0 5px 0;
+    }
+    .col_item {
+        width: 100%;
+    }
+    .col_item.flex {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+    .radio_inline .no_width {
+        width: 90px;
+    }
+    .col_inline,
+    .radio_inline,
+    .loginbox .chktext,
+    .radio_inline label,
+    .radio_inline span,
+    .col_1 .chktext,
+    .col_2 .chktext,
+    .col_3 .chktext,
+    .col_4 .chktext,
+    .col_5 .chktext,
+    .col_6 .chktext,
+    .col_7 .chktext,
+    .col_8 .chktext,
+    .col_9 .chktext,
+    .col_10 .chktext {
+        font-size: 16px;
+    }
+    /* 共用寬度設定 */
+    .col_2,
+    .col_3 {
+        width: calc(100% - 2%);
+    }
+    .col_4,
+    .col_5 {
+        width: calc(100% / 2 - 2%);
+    }
+    .col_6,
+    .col_7,
+    .col_8,
+    .col_9,
+    .col_10 {
+        width: calc(100% / 3 - 2%);
+    }
+    /* 共用-下拉選擇框select */
+    .select100 {
+        padding: 5px;
+        background-position-x: 95%;
+    }
+    .select33,
+    .select50,
+    .select100 {
+        font: normal normal 15px/15px "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+    }
+    /* 共用-輸入框input */
+    .input33,
+    .input50,
+    .input100,
+    .input_no_width {
+        font: normal normal 15px/15px "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+    }
+    .input50,
+    .select50 {
+        width: calc(100% - 5px);
+        margin: 0 5px 5px 0;
+    }
+    .no_width {
+        width: 100%;
+        font-size: 16px;
+        margin: 0 0 10px 0;
+        padding: 5px 35px 5px 10px;
+    }
+    .input_no_width,
+    input.no_width {
+        width: 63%;
+        padding: 4px;
+        font: normal normal .95rem/.9rem "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+    }
     /* 共用容器 */
     .share_container {
         width: 100%;
@@ -1579,14 +1885,26 @@ body.dark-theme .share_tipbox {
     .share_container_l {
         width: 96%;
     }
+    /* 共用寬度設定 */
+    .col_2 {
+        width: calc(100% - 2%);
+        padding: 2px;
+        margin: 2px;
+    }
+    /* 共用-按鈕 */
     input.btn33,
     button.btn33,
     a.btn33 {
         width: 100%;
     }
-    .col_2 {
-        width: calc(100% - 2%);
-        padding: .2rem .2rem .5rem .2rem;
+    /* 共用-假頁籤 */
+    .share_tab,
+    .flex_tabbox .share_tab {
+        padding: 7px;
+        font: normal bold 16px/20px "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+    }
+    .flex_tabbox .share_tab {
+        align-items: center;
     }
 }
 
@@ -1597,21 +1915,57 @@ body.dark-theme .share_tipbox {
     .share_container_s,
     .share_container_m,
     .share_container_l {
-        width: 96%;
+        width: 99%;
     }
+    .share_info {
+        width: calc(100% - 10px);
+        margin: 10px auto;
+        padding: 5px;
+    }
+    /* 共用寬度設定 */
+    .col_2 {
+        width: 100%;
+        padding: 2px;
+        margin: 2px;
+    }
+    .input_no_width,
+    input.no_width {
+        width: 100%;
+        margin: 0 0 5px 0;
+    }
+    /* 共用-按鈕 */
     input.btn33,
     button.btn33,
     a.btn33 {
         width: 100%;
     }
-    .col_2 {
+    input.btn_big,
+    a.btn_big {
         width: 100%;
-        padding: .2rem .2rem .5rem .2rem;
+    }
+    /* 共用-假頁籤 */
+    .share_tab,
+    .flex_tabbox .share_tab {
+        padding: 6px;
+        font: normal bold 15px/18px "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
     }
 }
 
 /* 寬度小於 280px */
-@media screen and (max-width: 280px) {}
+@media screen and (max-width: 280px) {
+    /* 共用-假頁籤 */
+    .flex_tabbox .share_tab {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
 
 /* 寬度小於 240px */
-@media screen and (max-width: 240px) {}
+@media screen and (max-width: 240px) {
+    /* 共用-假頁籤 */
+    .share_tab,
+    .flex_tabbox .share_tab {
+        padding: 4px;
+        font: normal bold 14px/14px "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+    }
+}

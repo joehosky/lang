@@ -6,19 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" /> <!-- 允許使用者用雙指縮放畫面 -->
     <meta name="format-detection" content="telephone=no, email=no" /> <!-- 禁止數字識別為電話或email -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="css/reset.css?date=20250715" type="text/css" />
+    <link rel="stylesheet" href="css/reset.css?date=20250718" type="text/css" />
+    <!-- 解決切換版色閃光問題 -->
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.documentElement.classList.add('dark-theme');
+            }
+        })();
+    </script>
     <!-- 共用樣式 css -->
-    <link rel="stylesheet" href="css/share.css?date=20250715" type="text/css" />
+    <link rel="stylesheet" href="css/share.css?date=20250718" type="text/css" />
     <!-- 所有樣式 css -->
-    <link rel="stylesheet" href="css/new_style.css?date=20250715" type="text/css" />
+    <link rel="stylesheet" href="css/style.css?date=20250718" type="text/css" />
     <!-- 跳框 css -->
-    <link rel="stylesheet" href="css/popup.css?date=20250715" type="text/css" />
+    <link rel="stylesheet" href="css/popup.css?date=20250718" type="text/css" />
     <!-- FontAwesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <!-- JQuery共用檔(有用JQuery必先讀這支，如跳框) -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js?date=20250715"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js?date=20250718"></script>
     <!-- JS(所有頁面共用) -->
-    <script src="js/new_all.js?date=20250715" defer></script>
+    <script src="js/all.js?date=20250718" defer></script>
     <title>好位子 | 勞動部課程</title>
 </head>
 <body>
@@ -27,7 +36,7 @@
 
     <!-- 回到頂端 -->
     <div class="go_top">
-        <img src="images/go_top.png?date=20250715" alt="">
+        <img src="images/go_top.png?date=20250718" alt="">
     </div>
 
     <!-- 左側欄位 -->
@@ -35,13 +44,13 @@
         <!-- 選單列滑出效果 -->
         <ul id="inside" class="inside">
             <li class="sidebar_list">
-                <img id="sidebarLogo" src="images/index/logo_white.png?date=20250715"
+                <img id="sidebarLogo" src="images/index/logo_white.png?date=20250718"
                     onclick="window.open('index.html','_self');" class="sidebar_logo">
             </li>
             <li class="sidebar_list">
                 <div class="link" onclick="window.open('index.html','_self');">
                     <div class="link_left">
-                        <img src="images/index/sidebar_icon1.png?date=20250715" alt="" class="sidebar_pic">
+                        <img src="images/index/sidebar_icon1.png?date=20250718" alt="" class="sidebar_pic">
                         <div>首頁</div>
                     </div>
                 </div>
@@ -49,7 +58,7 @@
             <li class="sidebar_list">
                 <div class="link">
                     <div class="link_left">
-                        <img src="images/index/sidebar_icon2.png?date=20250715" alt="" class="sidebar_pic">
+                        <img src="images/index/sidebar_icon2.png?date=20250718" alt="" class="sidebar_pic">
                         <div>勞動部課程</div>
                     </div>
                     <i class="fa-solid fa-caret-down arrow-icon"></i>
@@ -61,7 +70,7 @@
             <li class="sidebar_list">
                 <div class="link">
                     <div class="link_left">
-                        <img src="images/index/sidebar_icon3.png?date=20250715" alt="" class="sidebar_pic">
+                        <img src="images/index/sidebar_icon3.png?date=20250718" alt="" class="sidebar_pic">
                         <div>外籍照護技巧</div>
                     </div>
                     <i class="fa-solid fa-caret-down arrow-icon"></i>
@@ -73,7 +82,7 @@
             <li class="sidebar_list">
                 <div class="link">
                     <div class="link_left">
-                        <img src="images/index/sidebar_icon4.png?date=20250715" alt="" class="sidebar_pic">
+                        <img src="images/index/sidebar_icon4.png?date=20250718" alt="" class="sidebar_pic">
                         <div>國際外勞、移工教育訓練課程</div>
                     </div>
                     <i class="fa-solid fa-caret-down arrow-icon"></i>
@@ -85,7 +94,7 @@
             <li class="sidebar_list">
                 <div class="link">
                     <div class="link_left">
-                        <img src="images/index/sidebar_icon5.png?date=20250715" alt="" class="sidebar_pic">
+                        <img src="images/index/sidebar_icon5.png?date=20250718" alt="" class="sidebar_pic">
                         <div>會員專區</div>
                     </div>
                     <i class="fa-solid fa-caret-down arrow-icon"></i>
@@ -224,7 +233,7 @@
                         <ul class="learncard_box">
                             <!-- 總覽 -->
                             <li class="learncard_item">
-                                <img src="images/class/icon_01.png?date=20250715" alt="" class="learncard_pic">
+                                <img src="images/class/icon_01.png?date=20250718" alt="" class="learncard_pic">
                                 <div class="learncard_info">
                                     <div class="learncard_title">單詞</div>
                                     <div class="learncard_text">
@@ -267,7 +276,7 @@
                                 </ul>
                             </li>
                             <li class="learncard_item">
-                                <img src="images/class/icon_02.png?date=20250715" alt="" class="learncard_pic">
+                                <img src="images/class/icon_02.png?date=20250718" alt="" class="learncard_pic">
                                 <div class="learncard_info">
                                     <div class="learncard_title">對話</div>
                                     <div class="learncard_text">

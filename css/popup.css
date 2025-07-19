@@ -62,7 +62,7 @@
     height: 30px;
     padding: 25px;
     color: #fff;
-    font: normal bold 1.5em/25px "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+    font: normal bold 1.5rem/25px "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
     background-color: #49a9b5;
     border: 5px solid #fff;
     -webkit-border-radius: 10px;
@@ -77,8 +77,8 @@
     padding: 20px;
 }
 .popup_share_title {
-    padding: 0 1.5em 1.5em 1.5em;
-    font: normal normal 1.2em/1.6em "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+    padding: 0 1rem 1rem 1rem;
+    font: normal normal 1.2rem/1.5rem "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
 }
 .popup_toptab {
     display: flex;
@@ -114,21 +114,21 @@
 }
 /*********** 深色模式 ***********/
 /* 共用-輸入框、下拉選擇框 */
-body.dark-theme .popup_sharebox .input20,
-body.dark-theme .popup_sharebox .input33,
-body.dark-theme .popup_sharebox .input50,
-body.dark-theme .popup_sharebox .input100,
-body.dark-theme .popup_sharebox .select33,
-body.dark-theme .popup_sharebox .select50,
-body.dark-theme .popup_sharebox .select100,
-body.dark-theme .popup_sharebox .textarea50,
-body.dark-theme .popup_sharebox .textarea100,
-body.dark-theme .popup_sharebox .input_no_width,
-body.dark-theme .popup_sharebox input.no_width,
-body.dark-theme .popup_sharebox select.no_width,
-body.dark-theme .popup_sharebox .col_date,
-body.dark-theme .popup_sharebox .col_date50,
-body.dark-theme .popup_sharebox .item_select {
+html.dark-theme .popup_sharebox .input20,
+html.dark-theme .popup_sharebox .input33,
+html.dark-theme .popup_sharebox .input50,
+html.dark-theme .popup_sharebox .input100,
+html.dark-theme .popup_sharebox .select33,
+html.dark-theme .popup_sharebox .select50,
+html.dark-theme .popup_sharebox .select100,
+html.dark-theme .popup_sharebox .textarea50,
+html.dark-theme .popup_sharebox .textarea100,
+html.dark-theme .popup_sharebox .input_no_width,
+html.dark-theme .popup_sharebox input.no_width,
+html.dark-theme .popup_sharebox select.no_width,
+html.dark-theme .popup_sharebox .col_date,
+html.dark-theme .popup_sharebox .col_date50,
+html.dark-theme .popup_sharebox .item_select {
     color: #666;
     background-color: #ededed;
     border: 1px solid #d9d9d9;
@@ -175,9 +175,10 @@ body.dark-theme .popup_sharebox .item_select {
         min-width: 700px;
     }
     .popup_close {
-        width: 12px;
-        padding: 6px 7px 6px 8px;
-        font: normal bold 1rem/12px "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+        width: 36px;
+        height: 36px;
+        padding: 5px 8px;
+        font: normal bold 1rem/1rem "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
     }
     .share_popup_header {
         height: 25px;
