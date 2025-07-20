@@ -551,6 +551,7 @@
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
+    cursor: pointer;
 }
 .learncard_info {
     flex: 1;
