@@ -113,6 +113,19 @@
     border-radius: 5px;
 }
 /*********** 深色模式 ***********/
+/* 跳框-共用 */
+html.dark-theme .share_popup_s,
+html.dark-theme .share_popup_m,
+html.dark-theme .share_popup_l {
+    background: #555;
+}
+html.dark-theme .share_popup_header {
+    background-color: #4c8f97;
+    border: 5px solid #555;
+}
+html.dark-theme .popup_sharebox {
+    color: #fff;
+}
 /* 共用-輸入框、下拉選擇框 */
 html.dark-theme .popup_sharebox .input20,
 html.dark-theme .popup_sharebox .input33,
@@ -129,9 +142,9 @@ html.dark-theme .popup_sharebox select.no_width,
 html.dark-theme .popup_sharebox .col_date,
 html.dark-theme .popup_sharebox .col_date50,
 html.dark-theme .popup_sharebox .item_select {
-    color: #666;
-    background-color: #ededed;
-    border: 1px solid #d9d9d9;
+    color: #ccc;
+    background-color: #333;
+    border: 1px solid #555;
 }
 
 /*********  以下為 各不同寬度螢幕_設定  *********/

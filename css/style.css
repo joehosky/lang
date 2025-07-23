@@ -1423,7 +1423,8 @@ html.dark-theme .msg_content .saying li:last-child {
 }
 
 /* 寬度介於 1441px - 1900px (ipad pro,舊電腦) */
-@media screen and (min-width: 1441px) and (max-width: 1900px) {}
+@media screen and (min-width: 1441px) and (max-width: 1900px) {
+}
 
 /* 寬度介於 1024px - 1300px (ipad) */
 @media screen and (min-width: 1024px) and (max-width: 1300px) {
@@ -1454,6 +1455,11 @@ html.dark-theme .msg_content .saying li:last-child {
         right: 40px;
         padding: 0;
         font: normal bold 20px/20px "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+    }
+    /* logo和標題字 */
+    .logo_title {
+        margin: 0 0 0 5px;
+        font: normal bold 1.2rem/1.2rem "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
     }
     /* 右側欄位 */
     .main-content {
@@ -1527,6 +1533,10 @@ html.dark-theme .msg_content .saying li:last-child {
 
 /* 寬度介於 901px - 1023px (電腦) */
 @media screen and (min-width: 901px) and (max-width: 1023px) {
+    /* 手機版_資訊列按鈕 */
+    .navbar_toggle {
+        display: none;
+    }
     /* 登入、註冊 */
     .login_info {
         flex-direction: row;
@@ -2083,6 +2093,11 @@ html.dark-theme .msg_content .saying li:last-child {
 
 /* 寬度小於 240px */
 @media screen and (max-width: 240px) {
+    /* logo和標題字 */
+    .logo_title {
+        margin: 0 0 0 5px;
+        font: normal bold 14px/16px "Century Gothic", Arial, "Microsoft JhengHei", "PMingLiU", sans-serif;
+    }
     /* 登入 */
     .another_login span {
         padding: 5px 0;

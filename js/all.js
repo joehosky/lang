@@ -11,8 +11,8 @@ function updateLogo() {
     const logo = document.getElementById('sidebarLogo');
     const isDark = document.body.classList.contains('dark-theme');
     logo.src = isDark
-        ? 'images/index/logo_black.png'
-        : 'images/index/logo_white.png';
+        ? 'images/logo_black.png'
+        : 'images/logo_white.png';
 }
 
 
@@ -100,8 +100,8 @@ function updateLogo(isDark) {
     const logo = document.getElementById('sidebarLogo');
     if (!logo) return;
     logo.src = isDark
-        ? 'images/index/logo_black.png'
-        : 'images/index/logo_white.png';
+        ? 'images/logo_black.png'
+        : 'images/logo_white.png';
 }
 
 
